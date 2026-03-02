@@ -1,0 +1,6 @@
+# Permite a todos los robots acceder al sitio completo
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://dinodiana-98.github.io/AME/sitemap.xml
