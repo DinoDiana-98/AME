@@ -895,7 +895,7 @@ const productos = [
         categoria: 'One Piece',
         pagina: 58,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/RF3csfhf/OP-FIG-058.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/nzsvR7rF/OP-FIG-058-1.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873660/OP_FIG_058.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873660/OP_FIG_058_1.png'
     },
     {
         id: 'OP_FIG_059',
@@ -1155,7 +1155,7 @@ const productos = [
         categoria: 'Marvel',
         pagina: 75,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/RFbnzYkp/MV-FIG-075.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/x8JNjRQh/MV-FIG-075-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/ZnBvYcm1/MV-FIG-075-2.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/0jMK5fvW/MV-FIG-075-3.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873536/MV_FIG_075.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873534/MV_FIG_075_1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873534/MV_FIG_075_2.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873533/MV_FIG_075_3.png'
     },
     {
         id: 'MV_SET_076',
@@ -1316,7 +1316,7 @@ const productos = [
         categoria: 'Pokemon Lámparas',
         pagina: 85,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/6qwFtHCn/PK-LMP-085.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/C5NX1j4N/PK-LMP-085-1.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873443/PK_LMP_084.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873443/PK_LMP_084_1.png'
     },
     {
         id: 'PK_LMP_086',
@@ -1487,7 +1487,7 @@ const productos = [
         categoria: 'Demon Slayer',
         pagina: 96,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/15KsnFtx/DS-SET-096.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/jdTRScRX/DS-SET-096-1.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873399/DS_SET_096.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873400/DS_SET_096_1.png'
     },
     {
         id: 'DS_FIG_097',
@@ -1547,7 +1547,7 @@ const productos = [
         categoria: 'Demon Slayer',
         pagina: 100,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/s2xjR23y/DS-FIG-100.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/VNvfcNzc/DS-FIG-100-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/jj2xrjtm/DS-FIG-100-2.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873351/DS_FIG_100.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873351/DS_FIG_100_2.png,  https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873351/DS_FIG_100_1.png'
     },
     {
         id: 'DS_FIG_101',
@@ -1607,7 +1607,7 @@ const productos = [
         categoria: 'Demon Slayer',
         pagina: 104,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/y6ZNdWcD/DS-FIG-104.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/J0Z7ddMQ/DS-FIG-104-1.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873313/DS_FIG_104.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873313/DS_FIG_104_1.png'
     },
     {
         id: 'DS_FIG_105',
@@ -1876,7 +1876,7 @@ const productos = [
         categoria: 'Sailor Moon',
         pagina: 121,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/43QdX09x/SM-FIG-121.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/136XjX5P/SM-FIG-121-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/s2rxdzvM/SM-FIG-121-2.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/TP61MxpD/SM-FIG-121-3.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772872404/SM_FIG_121.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772872404/SM_FIG_121_2.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772872403/SM_FIG_121_1.png'
     },
     {
         id: 'SF_SET_122',
