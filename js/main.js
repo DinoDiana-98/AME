@@ -51,6 +51,7 @@ function generarUrlAmigable(nombre, id) {
         + '-' + id;
 }
 
+
 // ============================================
 // INICIALIZACIÓN
 // ============================================
@@ -66,8 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
     productos.forEach(p => {
         if (typeof p.imagenes === 'string' && p.imagenes.trim()) {
             p.imagenes = p.imagenes.split(',').map(url => url.trim()).filter(url => url);
-            // DESCOMENTA LA SIGUIENTE LÍNEA SI QUIERES OPTIMIZAR IMÁGENES
-            // p.imagenes = p.imagenes.map(url => optimizarUrlCloudinary(url));
         } else if (!p.imagenes) {
             p.imagenes = [];
         }
@@ -95,6 +94,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Event listeners
     initEventListeners();
+    
+    // CAPTURAR BÚSQUEDA DESDE URL (NUEVO)
+    capturarBusquedaDesdeURL();
 
     // Inicializar AOS
     if (typeof AOS !== 'undefined') {
@@ -144,6 +146,9 @@ document.addEventListener('DOMContentLoaded', () => {
     verificarCategorias(); // Debug
 });
 
+
+
+
 // ============================================
 // VERIFICAR CATEGORÍAS (DEBUG)
 // ============================================
@@ -173,22 +178,64 @@ function verificarCategorias() {
 // INICIALIZAR EVENT LISTENERS
 // ============================================
 function initEventListeners() {
-    // Búsqueda
+    // Búsqueda - AHORA FUNCIONA EN TODAS LAS PÁGINAS
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
-        searchInput.addEventListener('input', () => {
+        // Eliminar listener anterior si existe (evita duplicados)
+        searchInput.removeEventListener('input', window.searchHandler);
+        
+        // Crear handler reusable
+        window.searchHandler = function() {
             clearTimeout(window.searchTimeout);
-            window.searchTimeout = setTimeout(filtrarPorBusqueda, 300);
+            window.searchTimeout = setTimeout(() => {
+                const term = this.value.toLowerCase().trim();
+                
+                // Detectar si estamos en index o en producto
+                if (window.location.pathname.includes('productos/')) {
+                    // Estamos en página de producto - redirigir a index con búsqueda
+                    if (term.length > 0) {
+                        window.location.href = `../index.html?search=${encodeURIComponent(term)}`;
+                    } else {
+                        window.location.href = `../index.html`;
+                    }
+                } else {
+                    // Estamos en index - usar función existente
+                    estado.busquedaActiva = term;
+                    aplicarFiltros();
+                }
+            }, 300);
+        };
+        
+        // Asignar el handler
+        searchInput.addEventListener('input', window.searchHandler);
+        
+        // También buscar con Enter
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const term = searchInput.value.toLowerCase().trim();
+                
+                if (window.location.pathname.includes('productos/')) {
+                    if (term.length > 0) {
+                        window.location.href = `../index.html?search=${encodeURIComponent(term)}`;
+                    } else {
+                        window.location.href = `../index.html`;
+                    }
+                } else {
+                    estado.busquedaActiva = term;
+                    aplicarFiltros();
+                }
+            }
         });
     }
     
-    // Ordenamiento
+    // Ordenamiento (solo en index)
     const sortSelect = document.getElementById('sortSelect');
     if (sortSelect) {
         sortSelect.addEventListener('change', (e) => ordenarProductos(e.target.value));
     }
     
-    // Scroll
+    // Scroll (funciona en todas las páginas)
     window.addEventListener('scroll', () => {
         const scrollTop = document.getElementById('scrollTop');
         if (scrollTop) {
@@ -1144,3 +1191,33 @@ window.verImagenes = verImagenes;
 window.verOfertas = verOfertas;
 window.verNovedades = verNovedades;
 window.compraRapida = compraRapida;
+
+
+// ============================================
+// CAPTURAR BÚSQUEDA DESDE URL (para cuando viene de producto)
+// ============================================
+function capturarBusquedaDesdeURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchTerm = urlParams.get('search');
+    
+    if (searchTerm) {
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.value = decodeURIComponent(searchTerm);
+            estado.busquedaActiva = decodeURIComponent(searchTerm).toLowerCase().trim();
+            
+            // Aplicar filtro después de que los productos estén cargados
+            if (typeof productos !== 'undefined') {
+                aplicarFiltros();
+            } else {
+                // Esperar a que carguen los productos
+                const checkProductos = setInterval(() => {
+                    if (typeof productos !== 'undefined') {
+                        clearInterval(checkProductos);
+                        aplicarFiltros();
+                    }
+                }, 100);
+            }
+        }
+    }
+}
