@@ -31,18 +31,24 @@ let estado = {
 function generarUrlAmigable(nombre, id) {
     return nombre
         .toLowerCase()
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/(^-|-$)/g, '') + '-' + id;
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[ñ]/g, "n")
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '')
+        + '-' + id;
 }
 
 // ============================================
 // INICIALIZACIÓN
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Inicializando AME Figures...');
+    console.log('🚀 Inicializando AME Figures...');
     
     if (typeof productos === 'undefined') {
-        console.error('Error: productos.js no está cargado');
+        console.error('❌ Error: productos.js no está cargado');
         return;
     }
     
@@ -75,26 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
     actualizarCartPreview();
     mostrarProductosRecientes();
     
-    // Event listeners optimizados
-    window.addEventListener('scroll', () => {
-        const scrollTop = document.getElementById('scrollTop');
-        if (scrollTop) {
-            scrollTop.classList.toggle('visible', window.scrollY > 300);
-        }
-    }, { passive: true });
-    
-    const searchInput = document.getElementById('searchInput');
-    if (searchInput) {
-        searchInput.addEventListener('input', () => {
-            clearTimeout(window.searchTimeout);
-            window.searchTimeout = setTimeout(filtrarPorBusqueda, 300);
-        }, { passive: true });
-    }
-    
-    const sortSelect = document.getElementById('sortSelect');
-    if (sortSelect) {
-        sortSelect.addEventListener('change', (e) => ordenarProductos(e.target.value));
-    }
+    // Event listeners
+    initEventListeners();
 
     // Inicializar AOS
     if (typeof AOS !== 'undefined') {
@@ -111,25 +99,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typeof Swiper !== 'undefined') {
             new Swiper('.hero-swiper', {
                 loop: true,
-                autoplay: {
-                    delay: 5000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
+                autoplay: { delay: 5000, disableOnInteraction: false },
+                pagination: { el: '.swiper-pagination', clickable: true },
+                navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
             });
             
             new Swiper('.categories-swiper', {
                 slidesPerView: 2,
                 spaceBetween: 15,
                 loop: true,
-                autoplay: { delay: 3000 },
+                autoplay: { delay: 3000, disableOnInteraction: false },
                 navigation: { 
                     nextEl: '.categories-swiper .swiper-button-next', 
                     prevEl: '.categories-swiper .swiper-button-prev' 
@@ -149,8 +128,62 @@ document.addEventListener('DOMContentLoaded', () => {
         if (loader) loader.classList.add('hidden');
     }, 800);
     
-    console.log('Inicialización completa. Productos cargados:', productos.length);
+    console.log('✅ Inicialización completa. Productos cargados:', productos.length);
+    verificarCategorias(); // Debug
 });
+
+// ============================================
+// VERIFICAR CATEGORÍAS (DEBUG)
+// ============================================
+function verificarCategorias() {
+    console.log('=== VERIFICACIÓN DE CATEGORÍAS ===');
+    const categorias = [...new Set(productos.map(p => p.categoria))].sort();
+    console.log('📌 Categorías disponibles:', categorias);
+    
+    // Contar productos por categoría
+    console.log('\n📊 Conteo por categoría:');
+    categorias.forEach(cat => {
+        const count = productos.filter(p => p.categoria === cat).length;
+        console.log(`   ${cat}: ${count} productos`);
+    });
+    
+    // Verificar categorías específicas
+    const categoriasBuscadas = ['Marvel', 'DC', 'Dragon Ball', 'One Piece', 'Pokémon', 'Demon Slayer'];
+    console.log('\n🔍 Verificando categorías específicas:');
+    categoriasBuscadas.forEach(cat => {
+        const existe = categorias.includes(cat);
+        const productosEncontrados = productos.filter(p => p.categoria === cat).length;
+        console.log(`   ${existe ? '✅' : '❌'} ${cat}: ${productosEncontrados} productos`);
+    });
+}
+
+// ============================================
+// INICIALIZAR EVENT LISTENERS
+// ============================================
+function initEventListeners() {
+    // Búsqueda
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', () => {
+            clearTimeout(window.searchTimeout);
+            window.searchTimeout = setTimeout(filtrarPorBusqueda, 300);
+        });
+    }
+    
+    // Ordenamiento
+    const sortSelect = document.getElementById('sortSelect');
+    if (sortSelect) {
+        sortSelect.addEventListener('change', (e) => ordenarProductos(e.target.value));
+    }
+    
+    // Scroll
+    window.addEventListener('scroll', () => {
+        const scrollTop = document.getElementById('scrollTop');
+        if (scrollTop) {
+            scrollTop.classList.toggle('visible', window.scrollY > 300);
+        }
+    }, { passive: true });
+}
 
 // ============================================
 // GENERAR CATEGORÍAS ÚNICAS
@@ -184,7 +217,16 @@ function generarCategoriasDestacadas() {
     const grid = document.getElementById('featuredCategoriesGrid');
     if (!grid) return;
     
-    const categoriasUnicas = [...new Set(productos.map(p => p.categoria))].slice(0, 8);
+    const categoriasDestacadas = [
+        'Dragon Ball',
+        'One Piece',
+        'Pokémon',
+        'Demon Slayer',
+        'Marvel',
+        'DC',
+        'Naruto',
+        'Dragon Ball Sets'
+    ];
     
     const imagenesPorCategoria = {};
     productos.forEach(p => {
@@ -193,7 +235,10 @@ function generarCategoriasDestacadas() {
         }
     });
     
-    grid.innerHTML = categoriasUnicas.map(cat => {
+    grid.innerHTML = categoriasDestacadas.map(cat => {
+        const existe = productos.some(p => p.categoria === cat);
+        if (!existe) return '';
+        
         const imagen = imagenesPorCategoria[cat] || 'https://via.placeholder.com/300x300/ff6b00/ffffff?text=' + encodeURIComponent(cat);
         return `
         <div class="swiper-slide">
@@ -209,7 +254,105 @@ function generarCategoriasDestacadas() {
 }
 
 // ============================================
-// RENDERIZAR PRODUCTOS - VERSIÓN FINAL CON CARRUSEL
+// FILTRAR POR CATEGORÍA
+// ============================================
+function filtrarPorCategoria(categoria) {
+    console.log('🎯 Filtrando por categoría:', categoria);
+    
+    const categoriaNormalizada = categoria.trim();
+    estado.categoriaActiva = categoriaNormalizada;
+    
+    document.querySelectorAll('.category-btn').forEach(btn => {
+        const btnCat = btn.getAttribute('data-category');
+        btn.classList.toggle('active', btnCat === categoriaNormalizada);
+    });
+    
+    aplicarFiltros();
+    
+    document.querySelector('.products-section')?.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+    });
+}
+
+// ============================================
+// FILTRAR POR BÚSQUEDA
+// ============================================
+function filtrarPorBusqueda() {
+    const input = document.getElementById('searchInput');
+    if (!input) return;
+    
+    estado.busquedaActiva = input.value.toLowerCase().trim();
+    console.log('🔍 Buscando:', estado.busquedaActiva);
+    aplicarFiltros();
+}
+
+// ============================================
+// APLICAR FILTROS
+// ============================================
+function aplicarFiltros() {
+    console.log('🔍 Aplicando filtros - Categoría:', estado.categoriaActiva, 'Búsqueda:', estado.busquedaActiva);
+    
+    let filtrados = [...productos];
+    
+    // FILTRO POR CATEGORÍA
+    if (estado.categoriaActiva && estado.categoriaActiva !== 'todos' && estado.categoriaActiva !== '') {
+        const categoriaBuscar = estado.categoriaActiva.trim();
+        
+        filtrados = filtrados.filter(p => {
+            const categoriaProducto = p.categoria ? p.categoria.trim() : '';
+            return categoriaProducto === categoriaBuscar;
+        });
+        
+        console.log(`📊 Total en categoría "${categoriaBuscar}": ${filtrados.length} productos`);
+    }
+    
+    // FILTRO POR BÚSQUEDA
+    if (estado.busquedaActiva && estado.busquedaActiva !== '') {
+        const busqueda = estado.busquedaActiva.toLowerCase();
+        filtrados = filtrados.filter(p => 
+            p.nombre.toLowerCase().includes(busqueda) ||
+            (p.categoria && p.categoria.toLowerCase().includes(busqueda)) ||
+            (p.sku && p.sku.toLowerCase().includes(busqueda)) ||
+            (p.palabrasClave && p.palabrasClave.toLowerCase().includes(busqueda))
+        );
+    }
+    
+    estado.productosFiltrados = filtrados;
+    renderizarProductos();
+    actualizarContadorProductos();
+    
+    if (filtrados.length === 0) {
+        mostrarToast(`No se encontraron productos`, 'info');
+    }
+}
+
+// ============================================
+// ORDENAR PRODUCTOS
+// ============================================
+function ordenarProductos(tipo) {
+    switch(tipo) {
+        case 'menor-precio':
+            estado.productosFiltrados.sort((a, b) => a.precioOferta - b.precioOferta);
+            break;
+        case 'mayor-precio':
+            estado.productosFiltrados.sort((a, b) => b.precioOferta - a.precioOferta);
+            break;
+        case 'nombre':
+            estado.productosFiltrados.sort((a, b) => a.nombre.localeCompare(b.nombre));
+            break;
+        default:
+            estado.productosFiltrados.sort((a, b) => {
+                if (a.esSet && !b.esSet) return -1;
+                if (!a.esSet && b.esSet) return 1;
+                return b.descuento - a.descuento;
+            });
+    }
+    renderizarProductos();
+}
+
+// ============================================
+// RENDERIZAR PRODUCTOS
 // ============================================
 function renderizarProductos() {
     const grid = document.getElementById('productsGrid');
@@ -238,7 +381,6 @@ function renderizarProductos() {
         
         const stockPorcentaje = Math.min(100, (producto.stock / 10) * 100);
         
-        // Generar HTML para múltiples imágenes
         const imagenesHTML = imagenesArray.map((img, index) => {
             return `<img src="${img}" 
                          loading="lazy"
@@ -305,10 +447,36 @@ function renderizarProductos() {
     
     if (productsCount) productsCount.textContent = `${estado.productosFiltrados.length} productos`;
     
-    // Iniciar carrusel de imágenes después de renderizar
     setTimeout(() => {
         iniciarCarruselImagenes();
     }, 100);
+}
+
+// ============================================
+// FUNCIONES DE OFERTAS Y NOVEDADES
+// ============================================
+function verOfertas() {
+    const ofertas = productos.filter(p => p.descuento >= 20);
+    estado.productosFiltrados = ofertas;
+    estado.categoriaActiva = 'ofertas';
+    estado.busquedaActiva = '';
+    document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+    renderizarProductos();
+    actualizarContadorProductos();
+    document.querySelector('.products-section')?.scrollIntoView({ behavior: 'smooth' });
+    mostrarToast(`🔥 ${ofertas.length} productos en oferta`, 'success');
+}
+
+function verNovedades() {
+    const novedades = productos.slice(0, 20);
+    estado.productosFiltrados = novedades;
+    estado.categoriaActiva = 'novedades';
+    estado.busquedaActiva = '';
+    document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+    renderizarProductos();
+    actualizarContadorProductos();
+    document.querySelector('.products-section')?.scrollIntoView({ behavior: 'smooth' });
+    mostrarToast(`✨ ${novedades.length} novedades`, 'success');
 }
 
 // ============================================
@@ -326,7 +494,7 @@ function compraRapida(id) {
 }
 
 // ============================================
-// PRODUCTOS VISTOS RECIENTEMENTE (MEJORADO)
+// PRODUCTOS VISTOS RECIENTEMENTE
 // ============================================
 function agregarProductoReciente(productoId) {
     const producto = productos.find(p => p.id === productoId);
@@ -448,94 +616,6 @@ function verImagenes(productoId) {
 }
 
 // ============================================
-// FUNCIONES DE FILTRO
-// ============================================
-function filtrarPorCategoria(categoria) {
-    estado.categoriaActiva = categoria;
-    document.querySelectorAll('.category-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.category === categoria);
-    });
-    aplicarFiltros();
-    
-    document.querySelector('.products-section')?.scrollIntoView({ behavior: 'smooth' });
-}
-
-function filtrarPorBusqueda() {
-    estado.busquedaActiva = document.getElementById('searchInput')?.value.toLowerCase() || '';
-    aplicarFiltros();
-}
-
-function ordenarProductos(tipo) {
-    switch(tipo) {
-        case 'menor-precio':
-            estado.productosFiltrados.sort((a, b) => a.precioOferta - b.precioOferta);
-            break;
-        case 'mayor-precio':
-            estado.productosFiltrados.sort((a, b) => b.precioOferta - a.precioOferta);
-            break;
-        case 'nombre':
-            estado.productosFiltrados.sort((a, b) => a.nombre.localeCompare(b.nombre));
-            break;
-        default:
-            estado.productosFiltrados.sort((a, b) => {
-                if (a.esSet && !b.esSet) return -1;
-                if (!a.esSet && b.esSet) return 1;
-                return b.descuento - a.descuento;
-            });
-    }
-    renderizarProductos();
-}
-
-function aplicarFiltros() {
-    let filtrados = [...productos];
-    
-    if (estado.categoriaActiva !== 'todos') {
-        filtrados = filtrados.filter(p => p.categoria === estado.categoriaActiva);
-    }
-    
-    if (estado.busquedaActiva) {
-        const busqueda = estado.busquedaActiva.toLowerCase();
-        filtrados = filtrados.filter(p => 
-            p.nombre.toLowerCase().includes(busqueda) ||
-            p.sku.toLowerCase().includes(busqueda) ||
-            p.categoria.toLowerCase().includes(busqueda) ||
-            (p.palabrasClave && p.palabrasClave.toLowerCase().includes(busqueda))
-        );
-    }
-    
-    estado.productosFiltrados = filtrados;
-    renderizarProductos();
-    actualizarContadorProductos();
-}
-
-// ============================================
-// FUNCIONES DE OFERTAS Y NOVEDADES
-// ============================================
-function verOfertas() {
-    const ofertas = productos.filter(p => p.descuento >= 20);
-    estado.productosFiltrados = ofertas;
-    estado.categoriaActiva = 'ofertas';
-    estado.busquedaActiva = '';
-    document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
-    renderizarProductos();
-    actualizarContadorProductos();
-    document.querySelector('.products-section')?.scrollIntoView({ behavior: 'smooth' });
-    mostrarToast(`🔥 ${ofertas.length} productos en oferta`, 'success');
-}
-
-function verNovedades() {
-    const novedades = productos.slice(0, 20);
-    estado.productosFiltrados = novedades;
-    estado.categoriaActiva = 'novedades';
-    estado.busquedaActiva = '';
-    document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
-    renderizarProductos();
-    actualizarContadorProductos();
-    document.querySelector('.products-section')?.scrollIntoView({ behavior: 'smooth' });
-    mostrarToast(`✨ ${novedades.length} novedades`, 'success');
-}
-
-// ============================================
 // FUNCIONES DEL CARRITO
 // ============================================
 function agregarAlCarrito(id) {
@@ -652,14 +732,6 @@ function enviarWhatsAppProducto(id) {
         `¿Este producto está disponible? 📲`;
     
     window.open(`https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`, '_blank');
-    
-    const btn = event?.target;
-    if (btn) {
-        btn.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            btn.style.transform = 'scale(1)';
-        }, 100);
-    }
 }
 
 function sendOrderWhatsApp() {
@@ -871,6 +943,64 @@ function iniciarCarruselImagenes() {
             currentIndex = (currentIndex + 1) % images.length;
             images[currentIndex].classList.add('active');
         }, 3000);
+    });
+}
+
+
+// ============================================
+// EFECTO PARALLAX MEJORADO
+// ============================================
+function initParallaxEffects() {
+    // Parallax para el hero banner
+    const heroSlides = document.querySelectorAll('.hero-swiper .swiper-slide');
+    
+    heroSlides.forEach(slide => {
+        // Crear capa parallax si no existe
+        if (!slide.querySelector('.parallax-bg')) {
+            const bgImage = slide.style.backgroundImage.replace(/.*\s?url\(['"]?/, '').replace(/['"]?\).*/, '');
+            const parallaxBg = document.createElement('div');
+            parallaxBg.className = 'parallax-bg';
+            parallaxBg.style.backgroundImage = `url(${bgImage})`;
+            slide.insertBefore(parallaxBg, slide.firstChild);
+            
+            // Limpiar background-image del slide para evitar duplicados
+            slide.style.backgroundImage = 'none';
+        }
+    });
+
+    // Efecto parallax en scroll para hero
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        const parallaxElements = document.querySelectorAll('.hero-swiper .parallax-bg, .wa-parallax-bg');
+        
+        parallaxElements.forEach(element => {
+            const speed = element.classList.contains('wa-parallax-bg') ? 0.5 : 0.3;
+            const yPos = scrolled * speed;
+            element.style.transform = `translate3d(0, ${yPos}px, 0) scale(1.2)`;
+        });
+    });
+
+    // Efecto parallax en hover para categorías
+    const categoryCards = document.querySelectorAll('.category-card');
+    
+    categoryCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
+            
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+        });
     });
 }
 

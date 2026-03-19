@@ -4,63 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-
-    <!-- === TÍTULO PRINCIPAL === -->
-    <title>AME Figures | Tienda de Figuras Coleccionables de Anime y Comics</title>
-
-    <!-- === META DESCRIPTION === -->
+    <title>AME Figures | Tus personajes, tu colección</title>
     <meta name="description"
-        content="AME Figures: Tu tienda especializada en figuras coleccionables de Dragon Ball, One Piece, Pokémon, Marvel, Demon Slayer y mucho más. Los mejores precios y envíos a todo el país.">
-
+        content="AME Figures: Figuras coleccionables de Dragon Ball, One Piece, Pokémon, Marvel y más. Encuentra esa figura especial que estabas buscando.">
     <meta name="keywords"
-        content="figuras coleccionables, dragon ball, one piece, pokemon, marvel, demon slayer, naruto, anime figures, figuras de acción, goku, luffy, tanjiro">
-
+        content="figuras coleccionables, dragon ball, one piece, pokemon, marvel, demon slayer, naruto, anime figures, goku, luffy, tanjiro">
     <meta name="author" content="AME Figures">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://dinodiana-98.github.io/AME/">
 
-    <!-- === OPEN GRAPH === -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dinodiana-98.github.io/AME/">
     <meta property="og:title" content="AME Figures - Figuras Coleccionables">
-    <meta property="og:description"
-        content="Descubre nuestra colección exclusiva de figuras de anime y cómics. Dragon Ball, One Piece, Pokémon, Demon Slayer y más.">
+    <meta property="og:description" content="Descubre nuestra colección de figuras de anime y cómics.">
     <meta property="og:image" content="https://i.postimg.cc/HLx7xyT0/goku-ss.jpg">
     <meta property="og:site_name" content="AME Figures">
-
     <meta name="google-site-verification" content="7CcigIdu1exNYIWMQNJTMUatAzFx9N6N-Ay8b5DKvNE" />
 
-    <!-- === TWITTER CARDS === -->
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AME Figures - Figuras Coleccionables">
-    <meta name="twitter:description" content="Descubre nuestra colección exclusiva de figuras de anime y cómics.">
+    <meta name="twitter:description" content="Descubre nuestra colección de figuras de anime y cómics.">
     <meta name="twitter:image" content="https://i.postimg.cc/HLx7xyT0/goku-ss.jpg">
 
-    <!-- === FAVICON === -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23ff6b00'>🐉</text></svg>">
+    <meta name="theme-color" content="#ff6b00">
 
-    <!-- Font Awesome 6 -->
+    <!-- Fonts & CSS -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-
-    <!-- AOS (Animate on Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- Swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-    <!-- SweetAlert2 -->
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
-
-    <!-- CSS Principal -->
     <link rel="stylesheet" href="css/estilo.css">
-
-    
 </head>
 
 <body>
@@ -69,106 +53,64 @@
         <div class="spinner"></div>
     </div>
 
-    <!-- Efectos de fondo unificados -->
+    <!-- Efectos de fondo -->
     <div class="noise"></div>
     <div class="gradient-bg"></div>
 
-    <!-- HEADER -->
+    <!-- HEADER (se mantiene igual) -->
     <header class="main-header">
         <div class="header-container">
             <div class="logo-wrapper" onclick="window.location.href='index.html'">
-                <div class="logo-icon">
-                    <i class="fas fa-dragon"></i>
-                </div>
+                <div class="logo-icon"><i class="fas fa-dragon"></i></div>
                 <div class="logo-text">
                     <h1>AME FIGURES</h1>
                     <p>Colección Premium</p>
                 </div>
             </div>
-
             <div class="search-container">
                 <div class="search-box">
                     <i class="fas fa-search"></i>
-                    <input type="text" id="searchInput" placeholder="Buscar figuras...">
+                    <input type="text" id="searchInput" placeholder="Busca tu personaje favorito...">
                 </div>
             </div>
-
-            <!-- Carrito con preview -->
             <div class="cart-wrapper">
                 <div class="cart-button" onclick="toggleCart()">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count" id="cartCount">0</span>
                 </div>
-
-                <!-- Preview del carrito -->
                 <div class="cart-preview" id="cartPreview">
-                    <div class="preview-header">
-                        <span>Últimos añadidos</span>
-                        <span onclick="toggleCart()">Ver todo <i class="fas fa-arrow-right"></i></span>
-                    </div>
+                    <div class="preview-header"><span>Últimos añadidos</span><span onclick="toggleCart()">Ver todo <i
+                                class="fas fa-arrow-right"></i></span></div>
                     <div class="preview-items" id="cartPreviewItems"></div>
-                    <div class="preview-footer">
-                        <span>Total:</span>
-                        <span class="preview-total" id="cartPreviewTotal">S/ 0.00</span>
-                    </div>
+                    <div class="preview-footer"><span>Total:</span><span class="preview-total" id="cartPreviewTotal">S/
+                            0.00</span></div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- SECCIÓN DE BENEFICIOS -->
-    <section class="benefits-section">
-        <div class="benefits-container">
-            <div class="benefit-item">
-                <i class="fas fa-truck"></i>
-                <div>
-                    <h4>Envío Rápido</h4>
-                    <p>Entregas en 24/48h</p>
-                </div>
-            </div>
-            <div class="benefit-item">
-                <i class="fas fa-shield-alt"></i>
-                <div>
-                    <h4>Pago Seguro</h4>
-                    <p>Compra protegida</p>
-                </div>
-            </div>
-            <div class="benefit-item">
-                <i class="fas fa-tag"></i>
-                <div>
-                    <h4>Mejor Precio</h4>
-                    <p>Garantizado</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    
-
-    <!-- BANNER PRINCIPAL (HERO) -->
+    <!-- HERO IMPACTO (mensaje corto y emotivo)
     <div class="hero-banner">
         <div class="swiper hero-swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"
-                    style="background-image: linear-gradient(90deg, #0a0a0a 0%, rgba(10,10,10,0.8) 50%, rgba(10,10,10,0.4) 100%), url('https://i.postimg.cc/HLx7xyT0/goku-ss.jpg');">
+                    style="background-image: linear-gradient(90deg, #0a0a0a 0%, rgba(10,10,10,0.8) 100%), url('https://i.postimg.cc/HLx7xyT0/goku-ss.jpg');">
                     <div class="hero-content">
-                        <span class="hero-tag">Colección Exclusiva</span>
-                        <h2>DESCUBRE LOS <span class="highlight">NUEVOS</span> FIGURES DE <span class="highlight">DRAGON
-                                BALL</span></h2>
-                        <p>Ediciones limitadas y los personajes más épicos. ¡Hazte con el tuyo antes de que se agoten!
-                        </p>
+                        <span class="hero-tag">VUELVEN LOS QUE NUNCA SE FUERON</span>
+                        <h2>ENCUENTRA A TU <span class="highlight">HÉROE</span></h2>
+                        <p>Goku, Luffy, Pikachu... Todos están aquí. Tu infancia te espera.</p>
                         <div class="hero-buttons">
-                            <a href="#" class="hero-btn primary" onclick="verNovedades()">COMPRAR AHORA</a>
-                            <a href="#" class="hero-btn secondary" onclick="verOfertas()">VER OFERTAS</a>
+                            <a href="#" class="hero-btn primary" onclick="verNovedades()">EXPLORAR</a>
+                            <a href="#" class="hero-btn secondary" onclick="verOfertas()">OFERTAS</a>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide"
-                    style="background-image: linear-gradient(90deg, #0a0a0a 0%, rgba(10,10,10,0.8) 50%, rgba(10,10,10,0.4) 100%), url('https://i.postimg.cc/63RN92gN/DS-SET-095.png');">
+                    style="background-image: linear-gradient(90deg, #0a0a0a 0%, rgba(10,10,10,0.8) 100%), url('https://i.postimg.cc/63RN92gN/DS-SET-095.png');">
                     <div class="hero-content">
-                        <span class="hero-tag">Los más buscados</span>
-                        <h2>DEMON SLAYER:<br><span class="highlight">SET COMPLETO</span> CON 15% DCTO</h2>
-                        <p>Lleva a casa a Tanjiro, Nezuko y todos los pilares. Oferta por tiempo limitado.</p>
+                        <span class="hero-tag">COLECCIÓN DEMON SLAYER</span>
+                        <h2>LLEVA A <span class="highlight">TANJIRO</span> A CASA</h2>
+                        <p>Sets completos con los pilares. Oferta especial.</p>
                         <div class="hero-buttons">
                             <a href="#" class="hero-btn primary" onclick="filtrarPorCategoria('Demon Slayer')">VER
                                 COLECCIÓN</a>
@@ -180,123 +122,287 @@
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         </div>
+    </div> -->
+    
+    <!-- FILTROS RÁPIDOS (nuevo, para mostrar todas las categorías) -->
+    <div class="filters-section">
+        <div class="filters-wrapper">
+            <div class="categories-container">
+                <div class="categories-scroll" id="categoriesContainer"></div>
+            </div>
+            <div class="sort-wrapper">
+                <select class="sort-select" id="sortSelect">
+                    <option value="recomendados">✨ Recomendados</option>
+                    <option value="menor-precio">💰 Menor precio</option>
+                    <option value="mayor-precio">💎 Mayor precio</option>
+                    <option value="nombre">📦 A-Z</option>
+                </select>
+            </div>
+        </div>
     </div>
 
-    <!-- CATEGORÍAS DESTACADAS - CARRUSEL PRINCIPAL -->
+    <!-- BANNER PRINCIPAL (HERO) CON PARALLAX EN CSS -->
+<div class="hero-banner">
+    <div class="swiper hero-swiper">
+        <div class="swiper-wrapper">
+            <!-- PRIMER SLIDE - Todo Anime (CORREGIDO) -->
+            <div class="swiper-slide">
+                <div class="parallax-bg"
+                    style="background-image: url('https://res.cloudinary.com/dwjiqcuin/image/upload/v1773879693/BANNER_3_AMINES.jpg');">
+                </div>
+                <div class="hero-content">
+                    <span class="hero-tag">✨ VUELVEN LOS QUE NUNCA SE FUERON ✨</span>
+                    <h2>ENCUENTRA A TU <span class="highlight">HÉROE</span></h2>
+                    <p>... Todos están aquí. Tu infancia te espera.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="hero-btn primary" onclick="verNovedades()">EXPLORAR</a>
+                        <a href="#" class="hero-btn secondary" onclick="verOfertas()">OFERTAS</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEGUNDO SLIDE - Demon Slayer (CORREGIDO) -->
+            <div class="swiper-slide">
+                <div class="parallax-bg"
+                    style="background-image: url('https://res.cloudinary.com/dwjiqcuin/image/upload/v1773873021/BANNERKNY.jpg');">
+                </div>
+                <div class="hero-content">
+                    <span class="hero-tag">⚔️ COLECCIÓN DEMON SLAYER ⚔️</span>
+                    <h2>LLEVA A <span class="highlight">TODOS LOS PILARES</span> A CASA</h2>
+                    <p>Tanjiro, Nezuko, Zenitsu... Sets completos con los pilares.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="hero-btn primary" onclick="filtrarPorCategoria('Demon Slayer')">VER
+                            COLECCIÓN</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TERCER SLIDE - Dragon Ball (NUEVO - FRASE EMOTIVA) -->
+            <div class="swiper-slide">
+                <div class="parallax-bg"
+                    style="background-image: url('https://res.cloudinary.com/dwjiqcuin/image/upload/v1773873208/BANNER_DBZ.jpg');">
+                </div>
+                <div class="hero-content">
+                    <span class="hero-tag">🐉 LA SAGA QUE MARCO NUESTRA INFANCIA 🐉</span>
+                    <h2>EL ESPÍRITU DE <span class="highlight">DRAGON BALL</span> VIVE EN TI</h2>
+                    <p>Goku, Vegeta, Gohan, Trunks... Revive las batallas que nos hicieron soñar. ¡La colección completa
+                        te espera!</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="hero-btn primary" onclick="filtrarPorCategoria('Dragon Ball')">VER
+                            COLECCIÓN</a>
+                        <a href="#" class="hero-btn secondary" onclick="verOfertas()">OFERTAS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</div>
+
+    <!-- CATEGORÍAS DESTACADAS - CARRUSEL -->
     <section class="featured-categories">
         <div class="section-header">
-            <h2><i class="fas fa-compass"></i> Categorías</h2>
+            <h2><i class="fas fa-compass"></i> CATEGORÍAS</h2>
             <a href="#" class="view-all" onclick="filtrarPorCategoria('todos')">Ver todas <i
                     class="fas fa-arrow-right"></i></a>
         </div>
         <div class="swiper categories-swiper">
-            <div class="swiper-wrapper" id="featuredCategoriesGrid">
-                <!-- Se generará con JavaScript -->
-            </div>
+            <div class="swiper-wrapper" id="featuredCategoriesGrid"></div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         </div>
     </section>
 
-    <!-- PRODUCTOS -->
+    
+
+    <!-- PRODUCTOS - CATÁLOGO COMPLETO (ahora con más protagonismo) -->
     <section class="products-section">
         <div class="section-header">
-            <h2><i class="fas fa-fire"></i> Destacados</h2>
-            <span class="products-count" id="productsCount">0 productos</span>
+            <h2><i class="fas fa-fire"></i> COLECCIÓN COMPLETA</h2>
+            <span class="products-count" id="productsCount">cargando...</span>
         </div>
-
         <div class="products-grid" id="productsGrid"></div>
+    </section>
+
+    <!-- SECCIÓN WHATSAPP DINÁMICA (nueva, con parallax) -->
+    <section class="wa-dynamic-section">
+        <div class="wa-parallax">
+            <div class="wa-content">
+                <i class="fab fa-whatsapp"></i>
+                <h2>¿BUSCAS ALGO <span>ESPECIAL</span>?</h2>
+                <p>Escríbenos, te ayudamos a encontrar esa figura que tanto quieres.</p>
+                <a href="https://wa.me/51922511532?text=¡Hola!%20Quiero%20encontrar%20esa%20figura%20especial"
+                    class="btn-wa-large" target="_blank">
+                    <i class="fab fa-whatsapp"></i> CONSULTAR AHORA
+                </a>
+            </div>
+        </div>
     </section>
 
     <!-- PRODUCTOS VISTOS RECIENTEMENTE -->
     <section class="recently-viewed" id="recentlyViewedSection" style="display: none;">
         <div class="section-header">
-            <h2><i class="fas fa-history"></i> Recientes</h2>
+            <h2><i class="fas fa-history"></i> RECIENTES</h2>
         </div>
         <div class="recently-grid" id="recentlyViewedGrid"></div>
     </section>
 
-    <!-- TESTIMONIOS -->
+    <!-- TESTIMONIOS CON ÍCONOS DE FONTAWESOME -->
     <section class="testimonials-section">
         <div class="section-header">
-            <h2><i class="fas fa-star"></i> Testimonios</h2>
+            <h2><i class="fas fa-star"></i> OPINIONES DE COLECCIONISTAS</h2>
+            <span class="products-count">4.8 ★ (156 reseñas verificadas)</span>
         </div>
         <div class="testimonials-grid">
+    
+            <!-- Gato -->
             <div class="testimonial-card">
-                <div class="testimonial-rating">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                        class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">"Increíble calidad, las figuras son tal cual las fotos. El envío fue súper
-                    rápido."</p>
+                <div class="testimonial-rating">★★★★★</div>
+                <p class="testimonial-text">"Compré el Goku Ultra Instinct para mi colección y llegó en 2 días a Lima.
+                    La figura tiene excelentes detalles y el empaque súper seguro."</p>
                 <div class="testimonial-author">
-                    <img src="https://i.pravatar.cc/80?img=7" alt="Cliente">
+                    <div class="testimonial-icon"
+                        style="width: 50px; height: 50px; border-radius: 50%; background: var(--gradient); display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <i class="fas fa-cat" style="font-size: 24px; color: white;"></i>
+                    </div>
                     <div>
-                        <h4>Carlos M.</h4>
-                        <span>Coleccionista</span>
+                        <h4>Carlos Mendoza</h4>
+                        <span>Compró: Goku Ultra Instinct · Lima</span>
                     </div>
                 </div>
             </div>
+    
+            <!-- Perro -->
             <div class="testimonial-card">
-                <div class="testimonial-rating">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                        class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">"Encontré aquí el set de Dragon Ball que buscaba hace meses. Excelente
-                    atención."</p>
+                <div class="testimonial-rating">★★★★★</div>
+                <p class="testimonial-text">"El set de Demon Slayer lo compré para regalarle a mi hermano. Le encantó, las
+                    figuras tienen buena calidad y llegaron antes de lo esperado."</p>
                 <div class="testimonial-author">
-                    <img src="https://i.pravatar.cc/80?img=5" alt="Cliente">
+                    <div class="testimonial-icon"
+                        style="width: 50px; height: 50px; border-radius: 50%; background: var(--gradient); display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <i class="fas fa-dog" style="font-size: 24px; color: white;"></i>
+                    </div>
                     <div>
-                        <h4>Laura G.</h4>
-                        <span>Fan de Dragon Ball</span>
+                        <h4>Laura Gutiérrez</h4>
+                        <span>Compró: Set Demon Slayer · Lima</span>
                     </div>
                 </div>
             </div>
+    
+            <!-- Guitarra -->
             <div class="testimonial-card">
-                <div class="testimonial-rating">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                        class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">"Mi primera compra y no pudo ser mejor. La figura de Luffy Gear 5 es
-                    impresionante."</p>
+                <div class="testimonial-rating">★★★★★</div>
+                <p class="testimonial-text">"El Luffy Gear 5 está increíble. Ya tengo 3 figuras de AME y todas han llegado
+                    en perfecto estado. 100% recomendados."</p>
                 <div class="testimonial-author">
-                    <img src="https://i.pravatar.cc/80?img=3" alt="Cliente">
+                    <div class="testimonial-icon"
+                        style="width: 50px; height: 50px; border-radius: 50%; background: var(--gradient); display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <i class="fas fa-guitar" style="font-size: 24px; color: white;"></i>
+                    </div>
                     <div>
-                        <h4>Miguel R.</h4>
-                        <span>Otaku</span>
+                        <h4>Miguel Rodríguez</h4>
+                        <span>Compró: Luffy Gear 5 · Arequipa</span>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Robot -->
+            <div class="testimonial-card">
+                <div class="testimonial-rating">★★★★★</div>
+                <p class="testimonial-text">"Colecciono figuras de Dragon Ball desde hace más de 10 años y estas tienen muy
+                    buena relación calidad-precio."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-icon"
+                        style="width: 50px; height: 50px; border-radius: 50%; background: var(--gradient); display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <i class="fas fa-robot" style="font-size: 24px; color: white;"></i>
+                    </div>
+                    <div>
+                        <h4>Roberto Sánchez</h4>
+                        <span>Compró: 3 figuras Dragon Ball · Chiclayo</span>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Estrella -->
+            <div class="testimonial-card">
+                <div class="testimonial-rating">★★★★★</div>
+                <p class="testimonial-text">"La lámpara de Pikachu es preciosa, da una luz cálida y queda hermosa en
+                    cualquier habitación. Mi hijo está feliz."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-icon"
+                        style="width: 50px; height: 50px; border-radius: 50%; background: var(--gradient); display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <i class="fas fa-star" style="font-size: 24px; color: white;"></i>
+                    </div>
+                    <div>
+                        <h4>Ana Torres</h4>
+                        <span>Compró: Pikachu Lámpara · Piura</span>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Cohete -->
+            <div class="testimonial-card">
+                <div class="testimonial-rating">★★★★★</div>
+                <p class="testimonial-text">"El Vegeta Super Saiyan llegó en 3 días a Huancayo. La figura tiene buena
+                    presencia y el empaque protegió todo perfectamente."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-icon"
+                        style="width: 50px; height: 50px; border-radius: 50%; background: var(--gradient); display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <i class="fas fa-rocket" style="font-size: 24px; color: white;"></i>
+                    </div>
+                    <div>
+                        <h4>Diego Flores</h4>
+                        <span>Compró: Vegeta Super Saiyan · Huancayo</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MODAL DEL CARRITO -->
-    <div class="cart-modal" id="cartModal">
-        <div class="cart-container">
-            <div class="cart-header">
-                <h2><i class="fas fa-shopping-cart"></i> Mi Carrito</h2>
-                <button class="close-cart" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+    <!-- FOOTER (se mantiene igual) -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>AME FIGURES</h3>
+                <p>Más que figuras, son recuerdos. Tu tienda de coleccionables en Perú.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://wa.me/51922511532" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
             </div>
-            <div class="cart-items" id="cartItems"></div>
-            <div class="cart-footer">
-                <div class="cart-total">
-                    <span>Total:</span>
-                    <span class="total-amount" id="cartTotal">S/ 0.00</span>
-                </div>
-                <div class="cart-actions">
-                    <button class="btn-whatsapp-checkout" onclick="sendOrderWhatsApp()">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </button>
-                    <button class="btn-clear-cart" onclick="vaciarCarrito()">
-                        <i class="fas fa-trash"></i>
-                    </button>
-                </div>
+            <div class="footer-section">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="#" onclick="filtrarPorCategoria('todos')">Inicio</a></li>
+                    <li><a href="#" onclick="verNovedades()">Novedades</a></li>
+                    <li><a href="#" onclick="verOfertas()">Ofertas</a></li>
+                    <li><a href="#" onclick="filtrarPorCategoria('Dragon Ball')">Dragon Ball</a></li>
+                    <li><a href="#" onclick="filtrarPorCategoria('One Piece')">One Piece</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <ul>
+                    <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/51922511532">+51 922 511 532</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Pago</h4>
+                <div class="payment-methods"><span>Yape</span></div>
+                <div class="security-badges"><i class="fas fa-lock"></i> 100% Seguro</div>
             </div>
         </div>
-    </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 AME Figures - Hecho en Perú 🇵🇪</p>
+        </div>
+    </footer>
 
-    <!-- WHATSAPP FLOTANTE (AGRANDADO) -->
-    <a href="https://wa.me/51922511532?text=¡Hola%20AME%20Figures!%20Quiero%20consultar%20sobre..."
+    <!-- WHATSAPP FLOTANTE -->
+    <a href="https://wa.me/51922511532?text=¡Hola!%20Quiero%20encontrar%20esa%20figura%20especial"
         class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -309,52 +415,26 @@
     <!-- TOAST CONTAINER -->
     <div class="toast-container" id="toastContainer"></div>
 
-    <!-- FOOTER -->
-    <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>AME FIGURES</h3>
-                <p>Tu tienda especializada en figuras coleccionables de anime y cómics.</p>
-                <div class="social-icons">
-                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://wa.me/51922511532" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <!-- MODAL DEL CARRITO (se mantiene igual) -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-container">
+            <div class="cart-header">
+                <h2><i class="fas fa-shopping-cart"></i> Mi Carrito</h2><button class="close-cart"
+                    onclick="toggleCart()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="cart-items" id="cartItems"></div>
+            <div class="cart-footer">
+                <div class="cart-total"><span>Total:</span><span class="total-amount" id="cartTotal">S/ 0.00</span>
                 </div>
-            </div>
-            <div class="footer-section">
-                <h4>Enlaces</h4>
-                <ul>
-                    <li><a href="#" onclick="filtrarPorCategoria('todos')">Inicio</a></li>
-                    <li><a href="#" onclick="verNovedades()">Novedades</a></li>
-                    <li><a href="#" onclick="verOfertas()">Ofertas</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Contacto</h4>
-                <ul>
-                    <li><i class="fas fa-phone"></i> +51 922 511 532</li>
-                    <li><i class="fas fa-envelope"></i> ventas@amefigures.com</li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Pagos</h4>
-                <div class="payment-methods">
-                    <i class="fab fa-cc-visa"></i>
-                    <i class="fab fa-cc-mastercard"></i>
-                    <i class="fab fa-cc-paypal"></i>
-                    <span>Yape</span>
-                    <span>Plin</span>
-                </div>
-                <div class="security-badges">
-                    <i class="fas fa-lock"></i> 100% Seguro
+                <div class="cart-actions">
+                    <button class="btn-whatsapp-checkout" onclick="sendOrderWhatsApp()"><i class="fab fa-whatsapp"></i>
+                        WhatsApp</button>
+                    <button class="btn-clear-cart" onclick="vaciarCarrito()"><i class="fas fa-trash"></i>
+                        Vaciar</button>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 AME Figures. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+    </div>
 
     <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -362,115 +442,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/productos.js"></script>
     <script src="js/main.js"></script>
-
-    <script>
-        // Función para generar categorías destacadas con imágenes reales
-        function generarCategoriasDestacadas() {
-            // Obtener categorías únicas de productos
-            const categoriasUnicas = [...new Set(productos.map(p => p.categoria))].sort();
-
-            // Mapeo de imágenes por categoría (usando productos reales)
-            const imagenesPorCategoria = {};
-            productos.forEach(p => {
-                if (!imagenesPorCategoria[p.categoria] && p.imagenes) {
-                    const imgArray = typeof p.imagenes === 'string' ? p.imagenes.split(',')[0].trim() : p.imagenes[0];
-                    imagenesPorCategoria[p.categoria] = imgArray;
-                }
-            });
-
-            // Colores por categoría
-            const colores = {
-                'Dragon Ball': '#ff6b00',
-                'One Piece': '#f7d44a',
-                'Pokemon': '#ff0000',
-                'Demon Slayer': '#4a90e2',
-                'Marvel': '#ed1d24',
-                'Naruto': '#ff8c00',
-                'BTS': '#8a2be2',
-                'Star Wars': '#000000',
-                'Sailor Moon': '#ff69b4',
-                'DC': '#0474b3',
-                'Dragon Ball Sets': '#ff6b00',
-                'Dragon Ball Vehículos': '#ff6b00',
-                'Pokemon Lámparas': '#ff0000',
-                'One Piece Vehículos': '#f7d44a',
-                'Digimon': '#ff6b00',
-                'Bob Esponja': '#ffd700',
-                'Super Mario': '#ff0000',
-                'Mickey Mouse': '#000000',
-                'Yu-Gi-Oh!': '#9900cc',
-                'Toy Story': '#ff6b00',
-                'Terror': '#333333',
-                'Hello Kitty': '#ff69b4',
-                'Lilo y Stitch': '#4169e1',
-                'Death Note': '#000000',
-                'Street Fighter': '#ff6b00'
-            };
-
-            const grid = document.getElementById('featuredCategoriesGrid');
-            if (!grid) return;
-
-            // Limitar a 12 categorías para no saturar
-            const categoriasMostrar = categoriasUnicas.slice(0, 12);
-
-            grid.innerHTML = categoriasMostrar.map(cat => {
-                const imagen = imagenesPorCategoria[cat] || 'https://via.placeholder.com/300x300/ff6b00/ffffff?text=' + encodeURIComponent(cat);
-                const color = colores[cat] || '#ff6b00';
-
-                return `
-                <div class="swiper-slide">
-                    <div class="category-card" onclick="filtrarPorCategoria('${cat}')">
-                        <img src="${imagen}" alt="${cat}" loading="lazy" 
-                             onerror="this.onerror=null; this.src='https://via.placeholder.com/300x300/ff6b00/ffffff?text=${encodeURIComponent(cat)}'">
-                        <div class="category-overlay" style="background: linear-gradient(to top, ${color}CC 0%, rgba(0,0,0,0.7) 100%);">
-                            <h3>${cat}</h3>
-                            <span class="category-btn-small">Ver <i class="fas fa-chevron-right"></i></span>
-                        </div>
-                    </div>
-                </div>
-            `}).join('');
-        }
-
-        // Inicializar todo
-        document.addEventListener('DOMContentLoaded', function () {
-            generarCategoriasDestacadas();
-
-            // Inicializar AOS
-            if (typeof AOS !== 'undefined') {
-                AOS.init({ duration: 800, once: true });
-            }
-
-            // Inicializar Swiper para hero
-            if (typeof Swiper !== 'undefined') {
-                new Swiper('.hero-swiper', {
-                    loop: true,
-                    autoplay: { delay: 5000 },
-                    pagination: { el: '.swiper-pagination', clickable: true },
-                    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
-                });
-
-                // Swiper para categorías
-                new Swiper('.categories-swiper', {
-                    slidesPerView: 2,
-                    spaceBetween: 15,
-                    loop: true,
-                    autoplay: { delay: 3000 },
-                    navigation: { nextEl: '.categories-swiper .swiper-button-next', prevEl: '.categories-swiper .swiper-button-prev' },
-                    breakpoints: {
-                        640: { slidesPerView: 3 },
-                        768: { slidesPerView: 4 },
-                        1024: { slidesPerView: 5 }
-                    }
-                });
-            }
-
-            // Ocultar loader
-            setTimeout(() => {
-                const loader = document.getElementById('loader');
-                if (loader) loader.classList.add('hidden');
-            }, 1000);
-        });
-    </script>
 </body>
 
 </html>
