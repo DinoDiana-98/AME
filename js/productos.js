@@ -18,7 +18,7 @@ const productos = [
         categoria: 'Dragon Ball',
         pagina: 1,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/D0M0tbXv/DB-FIG-001.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/yxbxwSZ4/DB-FIG-001-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/6q3TjhTf/DB-FIG-001-2.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874449/DB_FIG_001.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874448/DB_FIG_001_1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874448/DB_FIG_001_2.png'
     },
     {
         id: 'DB_FIG_002',
@@ -33,7 +33,7 @@ const productos = [
         categoria: 'Dragon Ball',
         pagina: 2,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874448/DB_FIG_002.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874448/DB_FIG_002.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874447/DB_FIG_002_2.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874448/DB_FIG_002.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874448/DB_FIG_002_1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874447/DB_FIG_002_2.png'
     },
     {
         id: 'DB_FIG_003',
@@ -78,7 +78,7 @@ const productos = [
         categoria: 'Dragon Ball',
         pagina: 5,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/tg31YTLn/DB-FIG-005.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/pdf9pTg2/DB-FIG-005-1.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874447/DB_FIG_005.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874406/DB_FIG_005_1.png'
     },
     {
         id: 'DB_FIG_006',
@@ -93,7 +93,7 @@ const productos = [
         categoria: 'Dragon Ball',
         pagina: 6,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/L65ZNm1m/DB-FIG-006.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/Yq0mbtmJ/DB-FIG-006-1.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874405/DB_FIG_006.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874405/DB_FIG_006_1.png'
     },
     {
         id: 'DB_FIG_007',
@@ -108,7 +108,7 @@ const productos = [
         categoria: 'Dragon Ball',
         pagina: 7,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/vHT63G6q/DB-FIG-007.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/vHT63GVR/DB-FIG-007-1.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874405/DB_FIG_007.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874405/DB_FIG_007_1.png'
     },
     {
         id: 'DB_FIG_008',
@@ -123,7 +123,7 @@ const productos = [
         categoria: 'Dragon Ball',
         pagina: 8,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/pVqFfmys/DB-FIG-008.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/Kjq3xHC9/DB-FIG-008-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/d3tTMYN9/DB-FIG-008-2.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874404/DB_FIG_008.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874404/DB_FIG_008_1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874404/DB_FIG_008_2.png'
     },
     {
         id: 'DB_FIG_009',
@@ -138,7 +138,7 @@ const productos = [
         categoria: 'Dragon Ball',
         pagina: 9,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/D0ybVTp8/DB-FIG-009.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/hvP7FBZ4/DB-FIG-009-1.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874404/DB_FIG_009.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874403/DB_FIG_009_1.png '
     },
     {
         id: 'DB_FIG_010',
@@ -153,7 +153,7 @@ const productos = [
         categoria: 'Dragon Ball',
         pagina: 10,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/4yNhCg23/DB-FIG-010.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874403/DB_FIG_010.png'
     },
     {
         id: 'DB_FIG_011',
@@ -198,7 +198,7 @@ const productos = [
         categoria: 'Dragon Ball',
         pagina: 13,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/DzLGL5bJ/DB-FIG-013.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874402/DB_FIG_013.png'
     },
     {
         id: 'DB_FIG_014',
@@ -213,7 +213,7 @@ const productos = [
         categoria: 'Dragon Ball',
         pagina: 14,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/3wmGm9Dr/DB-FIG-014.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/L8rfJGhm/DB-FIG-014-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/2SPv1gyJ/DB-FIG-014-2.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874402/DB_FIG_014.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874401/DB_FIG_014_1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874401/DB_FIG_014_2.png'
     },
     {
         id: 'DB_FIG_015',
@@ -228,7 +228,7 @@ const productos = [
         categoria: 'Dragon Ball',
         pagina: 15,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/rwdxFqVD/DB-FIG-015.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/wT4Dp1pq/DB-FIG-015-1.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874401/DB_FIG_015.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874403/DB_FIG_015_1.png'
     },
     {
         id: 'DB_SET_016',
@@ -323,7 +323,7 @@ const productos = [
         categoria: 'Dragon Ball',
         pagina: 21,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/qqk2knq0/DB-FIG-021.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/7hm0b6JS/DB-FIG-021-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/kM10td3h/DB-FIG-021-2.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874320/DB_FIG_021.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874321/DB_FIG_021_1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874320/DB_FIG_021_2.png'
     },
     {
         id: 'DB_FIG_022',
@@ -338,7 +338,7 @@ const productos = [
         categoria: 'Dragon Ball',
         pagina: 22,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/j2FBVy4K/DB-FIG-022.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/7hWjvSnq/DB-FIG-022-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/mDV0wvcb/DB-FIG-022-2.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874320/DB_FIG_022.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874322/DB_FIG_022_1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874320/DB_FIG_022_2.png'
     },
     {
         id: 'DB_SET_023',
@@ -465,7 +465,7 @@ const productos = [
         categoria: 'Dragon Ball',
         pagina: 30,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/hvDK48md/DB-FIG-030.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/5NP20rnW/DB-FIG-030-1.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874221/DB_FIG_030.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772874221/DB_FIG_030_1.png'
     },
     {
         id: 'DB_FIG_031',
