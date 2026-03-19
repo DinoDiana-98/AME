@@ -20,7 +20,7 @@
     <meta property="og:url" content="https://dinodiana-98.github.io/AME/productos/set-4-figuras-de-groot-MV_SET_078.html">
     <meta property="og:title" content="SET 4 FIGURAS DE GROOT | AME Figures">
     <meta property="og:description" content="Set de 4 figuras de Groot - 5 cm....">
-    <meta property="og:image" content="https://i.postimg.cc/GtHG8RPd/MV-SET-078.png">
+    <meta property="og:image" content="https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873489/MV_SET_078.png. https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873825/MV_SET_078_1.png">
     <meta property="og:image:width" content="800">
     <meta property="og:image:height" content="800">
     <meta property="og:type" content="product">
@@ -32,7 +32,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="SET 4 FIGURAS DE GROOT | AME Figures">
     <meta name="twitter:description" content="Set de 4 figuras de Groot - 5 cm.">
-    <meta name="twitter:image" content="https://i.postimg.cc/GtHG8RPd/MV-SET-078.png">
+    <meta name="twitter:image" content="https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873489/MV_SET_078.png. https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873825/MV_SET_078_1.png">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png"
@@ -59,8 +59,7 @@
   "@type": "Product",
   "name": "SET 4 FIGURAS DE GROOT",
   "image": [
-    "https://i.postimg.cc/GtHG8RPd/MV-SET-078.png",
-    "https://i.postimg.cc/Dy4172yP/MV-SET-078-1.png"
+    "https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873489/MV_SET_078.png. https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873825/MV_SET_078_1.png"
   ],
   "description": "Set de 4 figuras de Groot - 5 cm.",
   "sku": "MV_SET_078",
@@ -74,7 +73,7 @@
     "url": "https://dinodiana-98.github.io/AME/productos/set-4-figuras-de-groot-MV_SET_078.html",
     "priceCurrency": "PEN",
     "price": 25,
-    "priceValidUntil": "2027-03-18",
+    "priceValidUntil": "2027-03-19",
     "availability": "https://schema.org/InStock",
     "itemCondition": "https://schema.org/NewCondition"
   }
@@ -603,15 +602,12 @@
         <!-- Galería de imágenes -->
         <div class="product-gallery">
             <div class="main-image">
-                <img id="mainProductImage" src="https://i.postimg.cc/GtHG8RPd/MV-SET-078.png" alt="SET 4 FIGURAS DE GROOT">
+                <img id="mainProductImage" src="https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873489/MV_SET_078.png. https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873825/MV_SET_078_1.png" alt="SET 4 FIGURAS DE GROOT">
             </div>
             <div class="gallery-thumbs">
                 
-            <div class="gallery-thumb active" onclick="cambiarImagenPrincipal('https://i.postimg.cc/GtHG8RPd/MV-SET-078.png', this)">
-                <img src="https://i.postimg.cc/GtHG8RPd/MV-SET-078.png" alt="SET 4 FIGURAS DE GROOT - Vista 1" loading="lazy">
-            </div>
-            <div class="gallery-thumb " onclick="cambiarImagenPrincipal('https://i.postimg.cc/Dy4172yP/MV-SET-078-1.png', this)">
-                <img src="https://i.postimg.cc/Dy4172yP/MV-SET-078-1.png" alt="SET 4 FIGURAS DE GROOT - Vista 2" loading="lazy">
+            <div class="gallery-thumb active" onclick="cambiarImagenPrincipal('https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873489/MV_SET_078.png. https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873825/MV_SET_078_1.png', this)">
+                <img src="https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873489/MV_SET_078.png. https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873825/MV_SET_078_1.png" alt="SET 4 FIGURAS DE GROOT - Vista 1" loading="lazy">
             </div>
             </div>
         </div>
@@ -661,15 +657,17 @@
 
             <!-- Banner de oferta de envío -->
             <div class="shipping-offer-banner" id="shippingOfferBanner" style="display: block;">
-                <i class="fas fa-truck"></i> ¡Envío gratis en zonas seleccionadas en Trujillo! Consulta por WhatsApp para más detalles.
-                        </div>
+                <i class="fas fa-truck"></i> ¡Envío gratis en zonas seleccionadas en Trujillo! Consulta por WhatsApp
+                para más detalles.
+            </div>
 
             <div class="action-buttons">
                 <button class="btn-primary-detail" onclick="agregarAlCarrito('MV_SET_078')" >
                     <i class="fas fa-cart-plus"></i> Añadir al carrito
                 </button>
-                <a href="https://wa.me/51922511532?text=¡Hola!%20Quiero%20consultar%20por%20SET 4 FIGURAS DE GROOT%20(MV_SET_078)"
-                    class="btn-whatsapp-detail" target="_blank">
+                <!-- BOTÓN 1: WhatsApp en página de producto (MODIFICADO) -->
+                <a href="#" onclick="enviarWhatsAppProducto('MV_SET_078'); return false;"
+                    class="btn-whatsapp-detail">
                     <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
             </div>
@@ -719,6 +717,7 @@
                     <span class="total-amount" id="cartTotal">S/ 0.00</span>
                 </div>
                 <div class="cart-actions">
+                    <!-- BOTÓN 2: Checkout WhatsApp (se mantiene igual) -->
                     <button class="btn-whatsapp-checkout" onclick="sendOrderWhatsApp()">
                         <i class="fab fa-whatsapp"></i> WhatsApp
                     </button>
@@ -730,9 +729,8 @@
         </div>
     </div>
 
-    <!-- WHATSAPP FLOTANTE -->
-    <a href="https://wa.me/51922511532?text=¡Hola%20AME%20Figures!%20Quiero%20consultar%20sobre..."
-        class="whatsapp-float" target="_blank">
+    <!-- WHATSAPP FLOTANTE - BOTÓN 3 (MODIFICADO) -->
+    <a href="#" onclick="enviarWhatsAppFlotante(); return false;" class="whatsapp-float">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -754,21 +752,27 @@
                     <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://wa.me/51922511532" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <!-- BOTÓN 4: WhatsApp en redes sociales (MODIFICADO) -->
+                    <a href="#" onclick="enviarWhatsAppFlotante(); return false;" target="_blank"><i
+                            class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="footer-section">
                 <h4>Enlaces Rápidos</h4>
                 <ul>
                     <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="../index.html?ver=novedades">Novedades</a></li>
-                    <li><a href="../index.html?ver=ofertas">Ofertas</a></li>
+                    <!-- BOTÓN 5: Novedades WhatsApp (NUEVO) -->
+                    <li><a href="#" onclick="verNovedadesWhatsApp(); return false;">Novedades</a></li>
+                    <!-- BOTÓN 6: Ofertas WhatsApp (NUEVO) -->
+                    <li><a href="#" onclick="verOfertasWhatsApp(); return false;">Ofertas</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Contacto</h4>
                 <ul>
-                    <li><i class="fas fa-phone"></i> +51 922 511 532</li>
+                    <!-- BOTÓN 7: Contacto WhatsApp (MODIFICADO) -->
+                    <li><i class="fas fa-phone"></i> <a href="#" onclick="contactoWhatsApp(); return false;">+51 922 511
+                            532</a></li>
                     <li><i class="fas fa-envelope"></i> ventas@amefigures.com</li>
                 </ul>
             </div>

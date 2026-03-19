@@ -729,9 +729,15 @@ function calcularTotal() {
     return estado.carrito.reduce((sum, item) => sum + (item.precioOferta * item.cantidad), 0);
 }
 
+
+
 // ============================================
-// FUNCIONES DE WHATSAPP MEJORADAS (SOLO ESTO CAMBIÉ)
+// FUNCIONES DE WHATSAPP PARA TODOS LOS BOTONES - FRONTEND
 // ============================================
+
+/**
+ * 1. BOTÓN WHATSAPP EN CADA TARJETA DE PRODUCTO
+ */
 function enviarWhatsAppProducto(id) {
     const producto = productos.find(p => p.id === id);
     if (!producto) return;
@@ -740,17 +746,17 @@ function enviarWhatsAppProducto(id) {
         `🎯 *${producto.nombre}*\n` +
         `🔖 *Código:* ${producto.sku}\n` +
         `📏 *Tamaño:* ${producto.tamaño || 'Estándar'}\n` +
-        `💰 *Precio oferta:* S/ ${producto.precioOferta.toFixed(2)}\n` +
-        `🏷️ *Descuento:* ${producto.descuento}%\n\n` +
-        `📦 *¿Tienen disponible esta figura?*\n` +
-        `Me gustaría saber:\n` +
-        `• Stock actual\n` +
-        `• Tiempo de envío a mi ciudad\n\n` +
-        `¡Gracias! 😊`;
+        `💰 *Precio:* S/ ${producto.precioOferta.toFixed(2)}\n` +
+        `🏷️ *Regular:* S/ ${producto.precioInflado.toFixed(2)} (-${producto.descuento}%)\n\n` +
+        `📦 *¿Tienen disponible?*\n` +
+        `Quedo atento, ¡gracias! 😊`;
     
     window.open(`https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`, '_blank');
 }
 
+/**
+ * 2. BOTÓN WHATSAPP EN EL CARRITO (CHECKOUT)
+ */
 function sendOrderWhatsApp() {
     if (estado.carrito.length === 0) {
         mostrarToast('El carrito está vacío', 'error');
@@ -758,16 +764,14 @@ function sendOrderWhatsApp() {
     }
     
     const total = calcularTotal();
-    const tieneEnvioGratis = total >= CONFIG.FREE_SHIPPING_MIN;
     
     let mensaje = '*¡Hola! Quiero completar mi pedido* 🛒\n\n';
     mensaje += '─────────────────────\n';
-    mensaje += '*MIS FIGURAS SELECCIONADAS:*\n';
+    mensaje += '*MIS FIGURAS:*\n';
     mensaje += '─────────────────────\n\n';
     
     estado.carrito.forEach((item, index) => {
         mensaje += `🎯 *${item.nombre}*\n`;
-        mensaje += `   🔖 Código: ${item.sku}\n`;
         mensaje += `   🔢 Cantidad: ${item.cantidad}\n`;
         mensaje += `   💰 Precio: S/ ${item.precioOferta.toFixed(2)}\n`;
         mensaje += `   📦 Subtotal: S/ ${(item.precioOferta * item.cantidad).toFixed(2)}\n\n`;
@@ -775,24 +779,101 @@ function sendOrderWhatsApp() {
     
     mensaje += '─────────────────────\n';
     mensaje += `💰 *TOTAL: S/ ${total.toFixed(2)}*\n`;
-    if (tieneEnvioGratis) {
-        mensaje += '🎁 *¡Envío gratis incluido!*\n';
-    }
     mensaje += '─────────────────────\n\n';
     
     mensaje += '*📍 DATOS PARA EL ENVÍO:*\n';
-    mensaje += 'Por favor, necesito estos datos:\n\n';
     mensaje += '👤 *Nombre:*\n';
     mensaje += '📞 *Teléfono:*\n';
     mensaje += '🏠 *Dirección:*\n';
     mensaje += '🏙️ *Ciudad:*\n\n';
     
-    mensaje += '💬 *Nota (opcional):*\n\n';
-    mensaje += '✨ *¡Gracias! Quedo atento a tu confirmación.*';
+    mensaje += '✨ *¡Gracias! Quedo atento.*';
     
     window.open(`https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`, '_blank');
     toggleCart();
 }
+
+/**
+ * 3. BOTÓN WHATSAPP FLOTANTE (burbuja)
+ */
+function enviarWhatsAppFlotante() {
+    const mensaje = `*¡Hola AME Figures!* 👋\n\n` +
+        `Estuve viendo su web y me gustaría consultar por algunas figuras.\n\n` +
+        `✨ *Mi consulta:*\n` +
+        `¿Podrían ayudarme? ¡Gracias! 😊`;
+    
+    window.open(`https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`, '_blank');
+}
+
+/**
+ * 4. BOTÓN "VER OFERTAS"
+ */
+function verOfertasWhatsApp() {
+    const mensaje = `*¡Hola!* 👋 Vi que tienen ofertas en la web.\n\n` +
+        `🎁 ¿Qué figuras están en promoción?\n` +
+        `💰 ¿Hasta cuándo?\n\n` +
+        `¡Gracias! 😊`;
+    
+    window.open(`https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`, '_blank');
+}
+
+/**
+ * 5. BOTÓN "NOVEDADES"
+ */
+function verNovedadesWhatsApp() {
+    const mensaje = `*¡Hola!* 👋 Quería consultar por las novedades.\n\n` +
+        `✨ ¿Qué figuras nuevas llegaron?\n` +
+        `🎯 ¿Qué me recomiendan?\n\n` +
+        `¡Gracias! 😊`;
+    
+    window.open(`https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`, '_blank');
+}
+
+/**
+ * 6. BOTÓN "CONTACTO" EN FOOTER
+ */
+function contactoWhatsApp() {
+    const mensaje = `*¡Hola AME Figures!* 👋\n\n` +
+        `Me gustaría contactarlos para:\n\n` +
+        `💬 *Mi consulta:*\n\n` +
+        `¡Gracias! 😊`;
+    
+    window.open(`https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`, '_blank');
+}
+
+/**
+ * 7. BOTÓN EN PÁGINA DE DETALLE DEL PRODUCTO
+ */
+function consultarProductoWhatsApp(sku, nombre, precio) {
+    const mensaje = `*¡Hola! Me interesa esta figura* 👋\n\n` +
+        `🎯 *${nombre}*\n` +
+        `🔖 *Código:* ${sku}\n` +
+        `💰 *Precio:* S/ ${precio}\n\n` +
+        `📦 *¿Tienen disponible?*\n` +
+        `📍 *Mi ciudad:*\n\n` +
+        `¡Gracias! 😊`;
+    
+    window.open(`https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`, '_blank');
+}
+
+/**
+ * 8. COMPRA RÁPIDA (botón rayo)
+ */
+function compraRapidaWhatsApp(id) {
+    const producto = productos.find(p => p.id === id);
+    if (!producto) return;
+    
+    const mensaje = `*¡Hola! Ya decidí, quiero esta figura* ⚡\n\n` +
+        `🎯 *${producto.nombre}*\n` +
+        `🔖 *Código:* ${producto.sku}\n` +
+        `💰 *Precio:* S/ ${producto.precioOferta.toFixed(2)}\n\n` +
+        `📦 *¿Me confirmas disponibilidad y envío?*\n` +
+        `📍 *Mi ciudad:*\n\n` +
+        `¡Gracias! 😊`;
+    
+    window.open(`https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`, '_blank');
+}
+
 
 // ============================================
 // FUNCIONES DEL CARRITO MODAL

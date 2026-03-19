@@ -621,16 +621,17 @@
 
             <!-- Banner de oferta de envío -->
             <div class="shipping-offer-banner" id="shippingOfferBanner" style="display: {{ENVIO_GRATIS_DISPLAY}};">
-                <i class="fas fa-truck"></i> ¡Envío gratis en zonas seleccionadas en Trujillo! Consulta por WhatsApp para más detalles.
-                        </div>
+                <i class="fas fa-truck"></i> ¡Envío gratis en zonas seleccionadas en Trujillo! Consulta por WhatsApp
+                para más detalles.
+            </div>
 
             <div class="action-buttons">
                 <button class="btn-primary-detail" onclick="agregarAlCarrito('{{PRODUCTO_ID}}')" {{BOTON_DISABLED}}>
                     <i class="fas fa-cart-plus"></i> {{BOTON_TEXTO}}
                 </button>
-                <!-- En el action-buttons de producto.html -->
-                <a href="https://wa.me/51922511532?text=*¡Hola!%20Me%20interesa%20esta%20figura*%20👋%0A%0A🎯%20*{{PRODUCTO_NOMBRE}}*%0A🔖%20*Código:*%20{{PRODUCTO_SKU}}%0A📏%20*Tamaño:*%20{{PRODUCTO_TAMAÑO}}%0A💰%20*Precio:*%20S/%20{{PRECIO_OFERTA}}%0A%0A📦%20*¿Tienen disponible?*%20Me%20podrían%20informar%20el%20stock%20y%20tiempo%20de%20envío%20a%20mi%20ciudad.%0A%0A📍%20*Mi%20ciudad:*%0A📞%20*Mi%20teléfono:*%0A%0A¡Gracias!%20😊"
-                    class="btn-whatsapp-detail" target="_blank">
+                <!-- BOTÓN 1: WhatsApp en página de producto (MODIFICADO) -->
+                <a href="#" onclick="enviarWhatsAppProducto('{{PRODUCTO_ID}}'); return false;"
+                    class="btn-whatsapp-detail">
                     <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
             </div>
@@ -680,6 +681,7 @@
                     <span class="total-amount" id="cartTotal">S/ 0.00</span>
                 </div>
                 <div class="cart-actions">
+                    <!-- BOTÓN 2: Checkout WhatsApp (se mantiene igual) -->
                     <button class="btn-whatsapp-checkout" onclick="sendOrderWhatsApp()">
                         <i class="fab fa-whatsapp"></i> WhatsApp
                     </button>
@@ -691,9 +693,8 @@
         </div>
     </div>
 
-    <!-- WHATSAPP FLOTANTE -->
-    <a href="https://wa.me/51922511532?text=¡Hola%20AME%20Figures!%20Quiero%20consultar%20sobre..."
-        class="whatsapp-float" target="_blank">
+    <!-- WHATSAPP FLOTANTE - BOTÓN 3 (MODIFICADO) -->
+    <a href="#" onclick="enviarWhatsAppFlotante(); return false;" class="whatsapp-float">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -715,21 +716,27 @@
                     <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://wa.me/51922511532" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <!-- BOTÓN 4: WhatsApp en redes sociales (MODIFICADO) -->
+                    <a href="#" onclick="enviarWhatsAppFlotante(); return false;" target="_blank"><i
+                            class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="footer-section">
                 <h4>Enlaces Rápidos</h4>
                 <ul>
                     <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="../index.html?ver=novedades">Novedades</a></li>
-                    <li><a href="../index.html?ver=ofertas">Ofertas</a></li>
+                    <!-- BOTÓN 5: Novedades WhatsApp (NUEVO) -->
+                    <li><a href="#" onclick="verNovedadesWhatsApp(); return false;">Novedades</a></li>
+                    <!-- BOTÓN 6: Ofertas WhatsApp (NUEVO) -->
+                    <li><a href="#" onclick="verOfertasWhatsApp(); return false;">Ofertas</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Contacto</h4>
                 <ul>
-                    <li><i class="fas fa-phone"></i> +51 922 511 532</li>
+                    <!-- BOTÓN 7: Contacto WhatsApp (MODIFICADO) -->
+                    <li><i class="fas fa-phone"></i> <a href="#" onclick="contactoWhatsApp(); return false;">+51 922 511
+                            532</a></li>
                     <li><i class="fas fa-envelope"></i> ventas@amefigures.com</li>
                 </ul>
             </div>

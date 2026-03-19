@@ -75,7 +75,7 @@
     "url": "https://dinodiana-98.github.io/AME/productos/escena-goku-vs-piccolo-DB_FIG_033.html",
     "priceCurrency": "PEN",
     "price": 35,
-    "priceValidUntil": "2027-03-18",
+    "priceValidUntil": "2027-03-19",
     "availability": "https://schema.org/InStock",
     "itemCondition": "https://schema.org/NewCondition"
   }
@@ -665,15 +665,17 @@
 
             <!-- Banner de oferta de envío -->
             <div class="shipping-offer-banner" id="shippingOfferBanner" style="display: block;">
-                <i class="fas fa-truck"></i> ¡Envío gratis en zonas seleccionadas en Trujillo! Consulta por WhatsApp para más detalles.
-                        </div>
+                <i class="fas fa-truck"></i> ¡Envío gratis en zonas seleccionadas en Trujillo! Consulta por WhatsApp
+                para más detalles.
+            </div>
 
             <div class="action-buttons">
                 <button class="btn-primary-detail" onclick="agregarAlCarrito('DB_FIG_033')" >
                     <i class="fas fa-cart-plus"></i> Añadir al carrito
                 </button>
-                <a href="https://wa.me/51922511532?text=¡Hola!%20Quiero%20consultar%20por%20ESCENA GOKU VS PICCOLO%20(DB_FIG_033)"
-                    class="btn-whatsapp-detail" target="_blank">
+                <!-- BOTÓN 1: WhatsApp en página de producto (MODIFICADO) -->
+                <a href="#" onclick="enviarWhatsAppProducto('DB_FIG_033'); return false;"
+                    class="btn-whatsapp-detail">
                     <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
             </div>
@@ -723,6 +725,7 @@
                     <span class="total-amount" id="cartTotal">S/ 0.00</span>
                 </div>
                 <div class="cart-actions">
+                    <!-- BOTÓN 2: Checkout WhatsApp (se mantiene igual) -->
                     <button class="btn-whatsapp-checkout" onclick="sendOrderWhatsApp()">
                         <i class="fab fa-whatsapp"></i> WhatsApp
                     </button>
@@ -734,9 +737,8 @@
         </div>
     </div>
 
-    <!-- WHATSAPP FLOTANTE -->
-    <a href="https://wa.me/51922511532?text=¡Hola%20AME%20Figures!%20Quiero%20consultar%20sobre..."
-        class="whatsapp-float" target="_blank">
+    <!-- WHATSAPP FLOTANTE - BOTÓN 3 (MODIFICADO) -->
+    <a href="#" onclick="enviarWhatsAppFlotante(); return false;" class="whatsapp-float">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -758,21 +760,27 @@
                     <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://wa.me/51922511532" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <!-- BOTÓN 4: WhatsApp en redes sociales (MODIFICADO) -->
+                    <a href="#" onclick="enviarWhatsAppFlotante(); return false;" target="_blank"><i
+                            class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="footer-section">
                 <h4>Enlaces Rápidos</h4>
                 <ul>
                     <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="../index.html?ver=novedades">Novedades</a></li>
-                    <li><a href="../index.html?ver=ofertas">Ofertas</a></li>
+                    <!-- BOTÓN 5: Novedades WhatsApp (NUEVO) -->
+                    <li><a href="#" onclick="verNovedadesWhatsApp(); return false;">Novedades</a></li>
+                    <!-- BOTÓN 6: Ofertas WhatsApp (NUEVO) -->
+                    <li><a href="#" onclick="verOfertasWhatsApp(); return false;">Ofertas</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Contacto</h4>
                 <ul>
-                    <li><i class="fas fa-phone"></i> +51 922 511 532</li>
+                    <!-- BOTÓN 7: Contacto WhatsApp (MODIFICADO) -->
+                    <li><i class="fas fa-phone"></i> <a href="#" onclick="contactoWhatsApp(); return false;">+51 922 511
+                            532</a></li>
                     <li><i class="fas fa-envelope"></i> ventas@amefigures.com</li>
                 </ul>
             </div>
