@@ -1000,7 +1000,7 @@ const productos = [
         categoria: 'One Piece',
         pagina: 65,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/RCNPy6yj/OP-FIG-065.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/5jWy4WnT/OP-FIG-065-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/xqV8fVtk/OP-FIG-065-2.png '
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873620/OP_FIG_065.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873620/OP_FIG_065_1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873620/OP_FIG_065_1.png'
     },
     {
         id: 'OP_FIG_066',
@@ -1015,7 +1015,7 @@ const productos = [
         categoria: 'One Piece',
         pagina: 66,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/mhWkLW8F/OP-FIG-066.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/rz2sV2Qx/OP-FIG-066-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/3NvWQxC0/OP-FIG-066-2.png '
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873619/OP_FIG_066.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873620/OP_FIG_066_1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873620/OP_FIG_066_1.png'
     },
     {
         id: 'OP_SET_067',
@@ -1031,7 +1031,7 @@ const productos = [
         pagina: 67,
         stock: 3,
         esSet: true,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/L51hF8B6/OP-SET-067.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/fy9kQRjQ/OP-SET-067-1.png '
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873583/OP_SET_067.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873583/OP_SET_067_1.png'
     },
     {
         id: 'OP_FIG_068',
@@ -1046,7 +1046,7 @@ const productos = [
         categoria: 'One Piece',
         pagina: 68,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/prFyMLYN/OP-FIG-068.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/gJ5r7ZRG/OP-FIG-068-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/63STPvZd/OP-FIG-068-2.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/R0gWc8Zv/OP-FIG-068-3.png '
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873583/OP_FIG_068.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873583/OP_FIG_068_1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873582/OP_FIG_068_2.png,  https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873582/OP_FIG_068_3.png'
     },
     {
         id: 'OP_FIG_069',
@@ -1061,7 +1061,7 @@ const productos = [
         categoria: 'One Piece',
         pagina: 69,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/nLFs9ZZY/OP-FIG-069.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/nL3Xv5hF/OP-FIG-069-1.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873582/OP_FIG_069.png. https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873582/OP_FIG_069_1.png'
     },
     {
         id: 'OP_FIG_070',
@@ -1076,7 +1076,7 @@ const productos = [
         categoria: 'One Piece',
         pagina: 70,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/x1yJdqrM/OP-FIG-070.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873582/OP_FIG_070.png'
     },
     {
         id: 'OP_VEH_071',
@@ -1091,7 +1091,7 @@ const productos = [
         categoria: 'One Piece Vehículos',
         pagina: 71,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/6pN4wnPN/OP-VEH-071.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/sDWGtwwq/OP-VEH-071-1.png '
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873581/OP_VEH_071.png. https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873582/OP_VEH_071_1.png'
     },
     {
         id: 'OP_VEH_072',
@@ -1106,7 +1106,7 @@ const productos = [
         categoria: 'One Piece Vehículos',
         pagina: 72,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/2SFb53pY/OP-VEH-072.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873582/OP_VEH_072.png'
     },
 
     // ============================================
@@ -1125,7 +1125,7 @@ const productos = [
         categoria: 'Marvel',
         pagina: 73,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/7YzJpmmm/MV-FIG-073.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/9XKq8vtq/MV-FIG-073-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/CMXfPWHG/MV-FIG-073-2.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873582/OP_VEH_072.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873535/MV_FIG_073_1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873535/MV_FIG_073_1.png'
     },
     {
         id: 'MV_FIG_074',
@@ -1140,7 +1140,7 @@ const productos = [
         categoria: 'Marvel',
         pagina: 74,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/yxMgDZY8/MV-FIG-074.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/gcQ6SfqF/MV-FIG-074-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/Hnc8W2Hm/MV-FIG-074-2.png '
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873535/MV_FIG_073_1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873535/MV_FIG_074_1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873534/MV_FIG_074_2.png'
     },
     {
         id: 'MV_FIG_075',
@@ -1171,7 +1171,7 @@ const productos = [
         pagina: 76,
         stock: 3,
         esSet: true,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/k5sbTGfn/MV-SET-076.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/TPfbjgj0/MV-SET-076-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/3w1vtN9V/MV-SET-076-2.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873536/MV_FIG_075.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873532/MV_SET_076_1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873532/MV_SET_076_2.png'
     },
     {
         id: 'MV_SET_077',
@@ -1187,7 +1187,7 @@ const productos = [
         pagina: 77,
         stock: 3,
         esSet: true,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/jjc7M2vk/MV-SET-077.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/q7w31qQP/MV-SET-077-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/15VDy956/MV-SET-077-2.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/kGz8WHwG/MV-SET-077-3.png '
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873532/MV_SET_076_2.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873533/MV_SET_077_1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873532/MV_SET_077_2.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873532/MV_SET_077_2.png'
     },
     {
         id: 'MV_SET_078',
@@ -1203,7 +1203,7 @@ const productos = [
         pagina: 78,
         stock: 3,
         esSet: true,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/GtHG8RPd/MV-SET-078.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/Dy4172yP/MV-SET-078-1.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873489/MV_SET_078.png. https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873825/MV_SET_078_1.png'
     },
     {
         id: 'MV_FIG_079',
@@ -1218,7 +1218,7 @@ const productos = [
         categoria: 'DC',
         pagina: 79,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/XvkwtQN2/MV-FIG-079.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/8CSRyqGH/MV-FIG-079-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/43g68rGz/MV-FIG-079-2.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/g0WVMfpx/MV-FIG-079-3.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873488/MV_FIG_079.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873488/MV_FIG_079_1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873488/MV_FIG_079_2.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873488/MV_FIG_079_3.png '
     },
 
     // ============================================
@@ -1238,7 +1238,7 @@ const productos = [
         pagina: 80,
         stock: 3,
         esSet: true,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/FK4yP2vJ/PK-SET-080.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/KjzrPB2P/PK-SET-080-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/xC9PdBFq/PK-SET-080-2.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/SsmGKHtb/PK-SET-080-3.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/HsN3tZjP/PK-SET-080-4.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873488/PK_SET_080.png,  https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873487/PK_SET_080_1.png , https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873487/PK_SET_080_2.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873487/PK_SET_080_3.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873487/PK_SET_080_4.png'
     },
     {
         id: 'PK_SET_081',
@@ -1254,7 +1254,7 @@ const productos = [
         pagina: 81,
         stock: 3,
         esSet: true,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/W1J8YGJ5/PK-SET-081.png,https://res.cloudinary.com/dwjiqcuin/image/upload/v1/KYSN61PL/PK-SET-081-1.png https://res.cloudinary.com/dwjiqcuin/image/upload/v1/ryQfDFT8/PK-SET-081-2.png '
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873486/PK_SET_081.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873486/PK_SET_081_1.png,  https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873486/PK_SET_081_2.png'
     },
     {
         id: 'PK_SET_082',
@@ -1270,7 +1270,7 @@ const productos = [
         pagina: 82,
         stock: 3,
         esSet: true,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/XYTHnHbS/PK-SET-082.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/CxZrTy9G/PK-SET-082-1.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873486/PK_SET_082.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873486/PK_SET_082_1.png'
     },
     {
         id: 'PK_SET_083',
@@ -1286,7 +1286,7 @@ const productos = [
         pagina: 83,
         stock: 3,
         esSet: true,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/KvppHcp4/PK-SET-083.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/tC4mkn58/PK-SET-083-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/PrS0nQJp/PK-SET-083-2.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/SKMP80rc/PK-SET-083-3.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873487/PK_SET_083.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873479/PK_SET_083_1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873443/PK_SET_083_2.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873444/PK_SET_083_3.png'
     },
     {
         id: 'PK_LMP_084',
@@ -1301,7 +1301,7 @@ const productos = [
         categoria: 'Pokemon Lámparas',
         pagina: 84,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/BvKzDWgQ/PK-LMP-084.png,https://res.cloudinary.com/dwjiqcuin/image/upload/v1/TYdBs4RS/PK-LMP-084-1.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873443/PK_LMP_084.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873443/PK_LMP_084_1.png'
     },
     {
         id: 'PK_LMP_085',
