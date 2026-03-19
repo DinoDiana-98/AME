@@ -15,6 +15,16 @@ const CONFIG = {
 };
 
 // ============================================
+// FUNCIÓN PARA OPTIMIZAR URLs DE CLOUDINARY (OPCIONAL)
+// ============================================
+function optimizarUrlCloudinary(url) {
+    if (url.includes('res.cloudinary.com') && !url.includes('f_auto')) {
+        return url.replace('/upload/', '/upload/q_auto,f_auto/');
+    }
+    return url;
+}
+
+// ============================================
 // ESTADO GLOBAL
 //============================================
 let estado = {
@@ -56,6 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
     productos.forEach(p => {
         if (typeof p.imagenes === 'string' && p.imagenes.trim()) {
             p.imagenes = p.imagenes.split(',').map(url => url.trim()).filter(url => url);
+            // DESCOMENTA LA SIGUIENTE LÍNEA SI QUIERES OPTIMIZAR IMÁGENES
+            // p.imagenes = p.imagenes.map(url => optimizarUrlCloudinary(url));
         } else if (!p.imagenes) {
             p.imagenes = [];
         }
@@ -718,18 +730,23 @@ function calcularTotal() {
 }
 
 // ============================================
-// FUNCIONES DE WHATSAPP
+// FUNCIONES DE WHATSAPP MEJORADAS (SOLO ESTO CAMBIÉ)
 // ============================================
 function enviarWhatsAppProducto(id) {
     const producto = productos.find(p => p.id === id);
     if (!producto) return;
     
-    const mensaje = `🛍️ *AME FIGURES - CONSULTA*\n\n` +
-        `📦 *${producto.nombre}*\n` +
-        `🔖 SKU: ${producto.sku}\n` +
-        `💰 Precio oferta: ${CONFIG.CURRENCY}${producto.precioOferta}\n` +
-        `🏷️ Descuento: ${producto.descuento}%\n\n` +
-        `¿Este producto está disponible? 📲`;
+    const mensaje = `*¡Hola! Me interesa esta figura* 👋\n\n` +
+        `🎯 *${producto.nombre}*\n` +
+        `🔖 *Código:* ${producto.sku}\n` +
+        `📏 *Tamaño:* ${producto.tamaño || 'Estándar'}\n` +
+        `💰 *Precio oferta:* S/ ${producto.precioOferta.toFixed(2)}\n` +
+        `🏷️ *Descuento:* ${producto.descuento}%\n\n` +
+        `📦 *¿Tienen disponible esta figura?*\n` +
+        `Me gustaría saber:\n` +
+        `• Stock actual\n` +
+        `• Tiempo de envío a mi ciudad\n\n` +
+        `¡Gracias! 😊`;
     
     window.open(`https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`, '_blank');
 }
@@ -743,31 +760,35 @@ function sendOrderWhatsApp() {
     const total = calcularTotal();
     const tieneEnvioGratis = total >= CONFIG.FREE_SHIPPING_MIN;
     
-    let mensaje = '🛍️ *AME FIGURES - NUEVO PEDIDO* 🛍️\n\n';
-    mensaje += '═══════════════════\n';
-    mensaje += '*DETALLE DEL PEDIDO:*\n';
-    mensaje += '═══════════════════\n\n';
+    let mensaje = '*¡Hola! Quiero completar mi pedido* 🛒\n\n';
+    mensaje += '─────────────────────\n';
+    mensaje += '*MIS FIGURAS SELECCIONADAS:*\n';
+    mensaje += '─────────────────────\n\n';
     
-    estado.carrito.forEach(item => {
-        mensaje += `📦 *${item.nombre}*\n`;
-        mensaje += `   SKU: ${item.sku}\n`;
-        mensaje += `   Cantidad: ${item.cantidad}\n`;
-        mensaje += `   P.Unit: ${CONFIG.CURRENCY}${item.precioOferta}\n`;
-        mensaje += `   Subtotal: ${CONFIG.CURRENCY}${(item.precioOferta * item.cantidad).toFixed(2)}\n\n`;
+    estado.carrito.forEach((item, index) => {
+        mensaje += `🎯 *${item.nombre}*\n`;
+        mensaje += `   🔖 Código: ${item.sku}\n`;
+        mensaje += `   🔢 Cantidad: ${item.cantidad}\n`;
+        mensaje += `   💰 Precio: S/ ${item.precioOferta.toFixed(2)}\n`;
+        mensaje += `   📦 Subtotal: S/ ${(item.precioOferta * item.cantidad).toFixed(2)}\n\n`;
     });
     
-    mensaje += '═══════════════════\n';
-    mensaje += `💰 *SUBTOTAL: ${CONFIG.CURRENCY}${total.toFixed(2)}*\n`;
+    mensaje += '─────────────────────\n';
+    mensaje += `💰 *TOTAL: S/ ${total.toFixed(2)}*\n`;
     if (tieneEnvioGratis) {
-        mensaje += `🚚 *ENVÍO: GRATIS*\n`;
+        mensaje += '🎁 *¡Envío gratis incluido!*\n';
     }
-    mensaje += `💰 *TOTAL: ${CONFIG.CURRENCY}${total.toFixed(2)}*\n\n`;
-    mensaje += '═══════════════════\n';
-    mensaje += '*DATOS DEL CLIENTE:*\n\n';
-    mensaje += '👤 Nombre:\n';
-    mensaje += '📞 Teléfono:\n';
-    mensaje += '📍 Dirección:\n\n';
-    mensaje += '✅ *¡Gracias por tu compra!*';
+    mensaje += '─────────────────────\n\n';
+    
+    mensaje += '*📍 DATOS PARA EL ENVÍO:*\n';
+    mensaje += 'Por favor, necesito estos datos:\n\n';
+    mensaje += '👤 *Nombre:*\n';
+    mensaje += '📞 *Teléfono:*\n';
+    mensaje += '🏠 *Dirección:*\n';
+    mensaje += '🏙️ *Ciudad:*\n\n';
+    
+    mensaje += '💬 *Nota (opcional):*\n\n';
+    mensaje += '✨ *¡Gracias! Quedo atento a tu confirmación.*';
     
     window.open(`https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`, '_blank');
     toggleCart();
@@ -1042,5 +1063,3 @@ window.verImagenes = verImagenes;
 window.verOfertas = verOfertas;
 window.verNovedades = verNovedades;
 window.compraRapida = compraRapida;
-
-

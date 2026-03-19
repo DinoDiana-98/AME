@@ -628,7 +628,8 @@
                 <button class="btn-primary-detail" onclick="agregarAlCarrito('{{PRODUCTO_ID}}')" {{BOTON_DISABLED}}>
                     <i class="fas fa-cart-plus"></i> {{BOTON_TEXTO}}
                 </button>
-                <a href="https://wa.me/51922511532?text=¡Hola!%20Quiero%20consultar%20por%20{{PRODUCTO_NOMBRE}}%20({{PRODUCTO_SKU}})"
+                <!-- En el action-buttons de producto.html -->
+                <a href="https://wa.me/51922511532?text=*¡Hola!%20Me%20interesa%20esta%20figura*%20👋%0A%0A🎯%20*{{PRODUCTO_NOMBRE}}*%0A🔖%20*Código:*%20{{PRODUCTO_SKU}}%0A📏%20*Tamaño:*%20{{PRODUCTO_TAMAÑO}}%0A💰%20*Precio:*%20S/%20{{PRECIO_OFERTA}}%0A%0A📦%20*¿Tienen disponible?*%20Me%20podrían%20informar%20el%20stock%20y%20tiempo%20de%20envío%20a%20mi%20ciudad.%0A%0A📍%20*Mi%20ciudad:*%0A📞%20*Mi%20teléfono:*%0A%0A¡Gracias!%20😊"
                     class="btn-whatsapp-detail" target="_blank">
                     <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
