@@ -148,7 +148,7 @@ function verificarCategorias() {
     });
     
     // Verificar categorías específicas
-    const categoriasBuscadas = ['Marvel', 'DC', 'Dragon Ball', 'One Piece', 'Pokémon', 'Demon Slayer'];
+    const categoriasBuscadas = ['Marvel', 'DC', 'Dragon Ball', 'One Piece', 'Pokemon', 'Demon Slayer'];
     console.log('\n🔍 Verificando categorías específicas:');
     categoriasBuscadas.forEach(cat => {
         const existe = categorias.includes(cat);
@@ -220,7 +220,7 @@ function generarCategoriasDestacadas() {
     const categoriasDestacadas = [
         'Dragon Ball',
         'One Piece',
-        'Pokémon',
+        'Pokemon',
         'Demon Slayer',
         'Marvel',
         'DC',
@@ -1005,6 +1005,29 @@ function initParallaxEffects() {
 }
 
 // ============================================
+// CORREGIR TILDE DE POKÉMON EN LA INTERFAZ
+// ============================================
+function corregirPokemonUI() {
+    const elementos = [
+        ...document.querySelectorAll('.category-btn'),
+        ...document.querySelectorAll('.section-header h2'),
+        ...document.querySelectorAll('.product-category'),
+        ...document.querySelectorAll('.testimonial-author span')
+    ];
+    
+    elementos.forEach(el => {
+        if (el.textContent.includes('Pokemon')) {
+            el.innerHTML = el.innerHTML.replace(/Pokemon/g, 'Pokémon');
+        }
+    });
+}
+
+// Ejecutar al cargar y después de cambios
+document.addEventListener('DOMContentLoaded', corregirPokemonUI);
+setTimeout(corregirPokemonUI, 500);
+setTimeout(corregirPokemonUI, 1000);
+
+// ============================================
 // EXPONER FUNCIONES GLOBALMENTE
 // ============================================
 window.filtrarPorCategoria = filtrarPorCategoria;
@@ -1019,3 +1042,5 @@ window.verImagenes = verImagenes;
 window.verOfertas = verOfertas;
 window.verNovedades = verNovedades;
 window.compraRapida = compraRapida;
+
+
