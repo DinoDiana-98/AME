@@ -876,7 +876,7 @@ const productos = [
         pagina: 57,
         stock: 3,
         esSet: true,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/J0ZjmLbs/OP-SET-057.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873660/OP_SET_057.png'
     },
 
     // ============================================
@@ -910,7 +910,7 @@ const productos = [
         categoria: 'One Piece',
         pagina: 59,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/CxYshzPN/OP-FIG-059.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/4Np1Rz5Q/OP-FIG-059-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/m27SWQw9/OP-FIG-059-2.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/Kc65W9nR/OP-FIG-059-3.png '
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873660/OP_FIG_059.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873659/OP_FIG_059_1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873659/OP_FIG_059_2.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873660/OP_FIG_059_3.png'
     },
     {
         id: 'OP_FIG_060',
@@ -925,7 +925,7 @@ const productos = [
         categoria: 'One Piece',
         pagina: 60,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/DZWqjs0f/OP-FIG-060.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/W3DMWrzT/OP-FIG-060-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/mrpYyVLT/OP-FIG-060-2.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873660/OP_FIG_060.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873659/OP_FIG_060_1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873659/OP_FIG_060_2.png'
     },
     {
         id: 'OP_FIG_061',
@@ -940,7 +940,7 @@ const productos = [
         categoria: 'One Piece',
         pagina: 61,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/rsrNmW2P/OP-FIG-061.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/PJwQxZn4/OP-FIG-061-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/T1DJwmvZ/OP-FIG-061-2.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/gjZHJRbs/OP-FIG-061-3.png '
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873658/OP_FIG_061.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873657/OP_FIG_061_1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873658/OP_FIG_061_2.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873658/OP_FIG_061_3.png'
     },
     {
         id: 'OP_FIG_062',
@@ -955,7 +955,7 @@ const productos = [
         categoria: 'One Piece',
         pagina: 62,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/TPd09pnW/OP-FIG-062.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/3xC9mg00/OP-FIG-062-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/qvXQy86v/OP-FIG-062-2.png '
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873656/OP_FIG_062.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873621/OP_FIG_062_1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873622/OP_FIG_062_2.png'
     },
     {
         id: 'OP_FIG_063',
@@ -970,7 +970,7 @@ const productos = [
         categoria: 'One Piece',
         pagina: 63,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/kgFwKxRq/OP-FIG-063.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/CxHJkjnz/OP-FIG-063-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/YqFdqcpg/OP-FIG-063-2.png'
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873621/OP_FIG_063.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873621/OP_FIG_063_1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873620/OP_FIG_063_2.png'
     },
     {
         id: 'OP_FIG_064',
@@ -985,7 +985,7 @@ const productos = [
         categoria: 'One Piece',
         pagina: 64,
         stock: 3,
-        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1/dQpWYQcH/OP-FIG-064.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/44m8q7qB/OP-FIG-064-1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1/9XrxKRKs/OP-FIG-064-2.png '
+        imagenes: 'https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873620/OP_FIG_064.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873620/OP_FIG_064_1.png, https://res.cloudinary.com/dwjiqcuin/image/upload/v1772873620/OP_FIG_064_2.png'
     },
     {
         id: 'OP_FIG_065',
