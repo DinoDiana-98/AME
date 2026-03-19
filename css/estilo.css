@@ -46,7 +46,7 @@ body {
 }
 
 /* ============================================
-   EFECTOS DE FONDO
+   EFECTOS DE FONDO (TUS EFECTOS ORIGINALES)
 ============================================ */
 .noise {
     position: fixed;
@@ -105,7 +105,7 @@ body {
     }
 }
 
-/* Partículas flotantes */
+/* Partículas flotantes (TUS PARTÍCULAS) */
 .particles {
     position: fixed;
     top: 0;
@@ -170,7 +170,7 @@ body {
 }
 
 /* ============================================
-   HEADER PRINCIPAL
+   HEADER PRINCIPAL - OPTIMIZADO MÓVIL
 ============================================ */
 .main-header {
     position: sticky;
@@ -193,7 +193,7 @@ body {
     gap: 20px;
 }
 
-/* Logo */
+/* Logo - TUS ESTILOS */
 .logo-wrapper {
     display: flex;
     align-items: center;
@@ -316,7 +316,7 @@ body {
     border: 2px solid var(--dark);
 }
 
-/* Preview del carrito */
+/* Preview del carrito - TUS EFECTOS */
 .cart-preview {
     position: absolute;
     top: 60px;
@@ -342,7 +342,7 @@ body {
 }
 
 /* ============================================
-   FILTROS Y CATEGORÍAS
+   FILTROS Y CATEGORÍAS - TUS ANIMACIONES CONSERVADAS
 ============================================ */
 .filters-section {
     background: rgba(26, 26, 26, 0.98);
@@ -363,7 +363,7 @@ body {
     gap: 20px;
 }
 
-/* Scroll automático de categorías */
+/* Scroll automático de categorías - TU ANIMACIÓN */
 .categories-container {
     flex: 1;
     overflow: hidden !important;
@@ -462,8 +462,9 @@ body {
     background-size: 16px;
 }
 
+
 /* ============================================
-   HERO BANNER CON PARALLAX IMPACTANTE
+   HERO BANNER - TUS EFECTOS COMPLETOS CON MEJOR ESPACIADO
 ============================================ */
 .hero-banner {
     max-width: 1400px;
@@ -486,7 +487,7 @@ body {
     overflow: hidden;
 }
 
-/* CAPA OSCURA MEJORADA */
+/* CAPA OSCURA MEJORADA - MÁS SUTIL PARA DEJAR VER LA IMAGEN */
 .hero-swiper .swiper-slide::before {
     content: '';
     position: absolute;
@@ -495,13 +496,13 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg,
-            rgba(0, 0, 0, 0.85) 0%,
-            rgba(0, 0, 0, 0.6) 50%,
-            rgba(0, 0, 0, 0.4) 100%);
+            rgba(0, 0, 0, 0.7) 0%,
+            rgba(0, 0, 0, 0.4) 50%,
+            rgba(0, 0, 0, 0.2) 100%);
     z-index: 1;
 }
 
-/* CAPA DE REFLEJO (EFECTO ESPECIAL) */
+/* CAPA DE REFLEJO - TU EFECTO ESPECIAL (MÁS SUTIL) */
 .hero-swiper .swiper-slide::after {
     content: '';
     position: absolute;
@@ -509,8 +510,8 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at center, rgba(255, 107, 0, 0.2) 0%, transparent 70%);
-    animation: rotate 20s linear infinite;
+    background: radial-gradient(circle at center, rgba(255, 107, 0, 0.15) 0%, transparent 70%);
+    animation: rotate 25s linear infinite;
     z-index: 2;
     pointer-events: none;
 }
@@ -529,14 +530,14 @@ body {
     transition: transform 0.1s linear;
 }
 
-/* ANIMACIÓN DE ZOOM SUAVE */
+/* ANIMACIÓN DE ZOOM SUAVE - MÁS LENTA PARA MAYOR ELEGANCIA */
 @keyframes slowZoom {
     0% {
         transform: scale(1);
     }
 
     50% {
-        transform: scale(1.05);
+        transform: scale(1.08);
     }
 
     100% {
@@ -545,9 +546,12 @@ body {
 }
 
 .hero-swiper .swiper-slide-active .parallax-bg {
-    animation: slowZoom 20s infinite ease-in-out;
+    animation: slowZoom 25s infinite ease-in-out;
 }
 
+/* ============================================
+   CONTENIDO DEL HERO - JERARQUÍA VISUAL MEJORADA
+============================================ */
 .hero-content {
     position: relative;
     z-index: 10;
@@ -560,29 +564,46 @@ body {
     max-width: 700px;
 }
 
-.hero-tag {
-    display: inline-block;
+/* Línea superior decorativa */
+.hero-content::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 80px;
+    width: 60px;
+    height: 2px;
     background: var(--gradient);
-    padding: 10px 25px;
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    width: fit-content;
-    text-transform: uppercase;
-    box-shadow: 0 5px 20px rgba(255, 107, 0, 0.5);
-    animation: pulseGlow 3s infinite;
+    display: none;
 }
 
+/* TAG - MÁS DISCRETO Y ELEGANTE */
+.hero-tag {
+    display: inline-block;
+    background: rgba(255, 107, 0, 0.2);
+    backdrop-filter: blur(5px);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    width: fit-content;
+    text-transform: uppercase;
+    color: var(--primary);
+    border: 1px solid rgba(255, 107, 0, 0.5);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* TÍTULO PRINCIPAL - GRANDE Y CON ESPACIO */
 .hero-content h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 56px;
+    font-size: 58px;
     font-weight: 900;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.7);
-    animation: slideUp 1s ease;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.8s ease;
+    letter-spacing: -0.5px;
 }
 
 .hero-content h2 .highlight {
@@ -593,35 +614,78 @@ body {
     text-shadow: 0 0 30px rgba(255, 107, 0, 0.5);
 }
 
-.hero-content p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    opacity: 0.95;
-    max-width: 600px;
+/* SUBTÍTULO O FRASE SECUNDARIA */
+.hero-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.9);
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-    line-height: 1.6;
-    animation: slideUp 1s ease 0.2s both;
+    animation: slideUp 0.8s ease 0.1s both;
 }
 
+/* TEXTO DESCRIPTIVO - MÁS ESPACIADO */
+.hero-content p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    max-width: 550px;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+    line-height: 1.6;
+    animation: slideUp 0.8s ease 0.2s both;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* LISTA DE PERSONAJES (si aplica) */
+.hero-content ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+    animation: slideUp 0.8s ease 0.25s both;
+}
+
+.hero-content ul li {
+    background: rgba(255, 107, 0, 0.15);
+    backdrop-filter: blur(5px);
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid rgba(255, 107, 0, 0.3);
+    color: white;
+}
+
+/* BOTONES - MEJOR ESPACIADO */
 .hero-buttons {
     display: flex;
-    gap: 20px;
-    animation: slideUp 1s ease 0.4s both;
+    gap: 15px;
+    animation: slideUp 0.8s ease 0.3s both;
 }
 
 .hero-btn {
-    padding: 14px 35px;
+    padding: 14px 32px;
     border-radius: 50px;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 14px;
     text-decoration: none;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: inline-block;
-    text-align: center;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     border: 2px solid transparent;
     position: relative;
     overflow: hidden;
+    min-width: 140px;
+    letter-spacing: 0.5px;
+}
+
+.hero-btn i {
+    margin-right: 8px;
+    font-size: 16px;
 }
 
 .hero-btn::before {
@@ -632,41 +696,43 @@ body {
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
     transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
+    transition: width 0.5s, height 0.5s;
 }
 
 .hero-btn:hover::before {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
 }
 
 .hero-btn.primary {
     background: var(--gradient);
     color: white;
-    box-shadow: 0 10px 30px rgba(255, 107, 0, 0.5);
+    box-shadow: 0 8px 20px rgba(255, 107, 0, 0.4);
 }
 
 .hero-btn.primary:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 20px 40px rgba(255, 107, 0, 0.7);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(255, 107, 0, 0.6);
 }
 
 .hero-btn.secondary {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
     color: white;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .hero-btn.secondary:hover {
-    background: white;
-    color: var(--dark);
+    background: rgba(255, 255, 255, 0.2);
     border-color: white;
-    transform: translateY(-5px);
+    transform: translateY(-3px);
 }
 
+/* ============================================
+   ANIMACIONES
+============================================ */
 @keyframes slideUp {
     from {
         opacity: 0;
@@ -680,64 +746,119 @@ body {
 }
 
 /* ============================================
-   RESPONSIVE
+   VERSIÓN MÓVIL - JERARQUÍA MEJORADA
 ============================================ */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .hero-swiper .swiper-slide {
         height: 500px;
     }
 
-    .hero-content h2 {
-        font-size: 48px;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-swiper .swiper-slide {
-        height: 450px;
-    }
-
     .hero-content {
-        padding: 0 40px;
+        padding: 0 30px;
+    }
+
+    .hero-tag {
+        font-size: 11px;
+        padding: 5px 12px;
+        margin-bottom: 20px;
     }
 
     .hero-content h2 {
-        font-size: 36px;
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    .hero-content h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
     }
 
     .hero-content p {
-        font-size: 16px;
+        font-size: 14px;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+
+    .hero-content ul {
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .hero-content ul li {
+        padding: 4px 12px;
+        font-size: 12px;
     }
 
     .hero-buttons {
-        flex-direction: column;
-        gap: 10px;
+        gap: 12px;
     }
 
     .hero-btn {
-        width: 100%;
-        text-align: center;
+        padding: 12px 24px;
+        font-size: 13px;
+        min-width: 120px;
     }
 }
 
 @media (max-width: 480px) {
     .hero-swiper .swiper-slide {
-        height: 400px;
+        height: 450px;
     }
 
     .hero-content {
-        padding: 0 25px;
+        padding: 0 20px;
     }
 
     .hero-content h2 {
-        font-size: 28px;
+        font-size: 32px;
     }
 
-    .hero-tag {
-        font-size: 11px;
-        padding: 8px 15px;
+    .hero-content h3 {
+        font-size: 18px;
+    }
+
+    .hero-content p {
+        font-size: 13px;
+        margin-bottom: 18px;
+    }
+
+    .hero-content ul {
+        display: none;
+        /* Ocultar lista en móviles muy pequeños */
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .hero-btn {
+        width: 100%;
+        min-width: auto;
     }
 }
+
+@media (max-width: 360px) {
+    .hero-swiper .swiper-slide {
+        height: 400px;
+    }
+
+    .hero-content h2 {
+        font-size: 26px;
+    }
+
+    .hero-content h3 {
+        font-size: 16px;
+    }
+
+    .hero-content p {
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+}
+
+
+
 
 /* ============================================
    CATEGORÍAS DESTACADAS
@@ -877,7 +998,7 @@ body {
 }
 
 /* ============================================
-   GRID DE PRODUCTOS
+   GRID DE PRODUCTOS - OPTIMIZADO MÓVIL CON TUS ESTILOS
 ============================================ */
 .products-section {
     max-width: 1400px;
@@ -907,7 +1028,7 @@ body {
     box-shadow: 0 15px 30px -10px rgba(255, 107, 0, 0.4);
 }
 
-/* Badges */
+/* Badges - TUS ESTILOS */
 .product-badges {
     position: absolute;
     top: 12px;
@@ -944,7 +1065,7 @@ body {
     color: white;
 }
 
-/* Imagen del producto */
+/* Imagen del producto - TU CARRUSEL DE IMÁGENES */
 .product-image {
     height: 220px;
     position: relative;
@@ -990,7 +1111,7 @@ body {
     backdrop-filter: blur(2px);
 }
 
-/* Overlay de vista rápida */
+/* Overlay de vista rápida - TU EFECTO */
 .quick-view-overlay {
     position: absolute;
     top: 0;
@@ -1058,7 +1179,7 @@ body {
     color: var(--primary);
 }
 
-/* Stock */
+/* Stock - TU BARRA DE PROGRESO */
 .stock-progress {
     margin: 10px 0;
 }
@@ -1090,7 +1211,7 @@ body {
     font-size: 10px;
 }
 
-/* Precios */
+/* Precios - TU DISEÑO */
 .price-wrapper {
     display: flex;
     align-items: baseline;
@@ -1120,7 +1241,7 @@ body {
     color: white;
 }
 
-/* Botones de acción */
+/* Botones de acción - OPTIMIZADOS PARA MÓVIL */
 .product-actions {
     display: flex;
     gap: 5px;
@@ -1186,7 +1307,7 @@ body {
 }
 
 /* ============================================
-   SECCIÓN WHATSAPP PARALLAX
+   SECCIÓN WHATSAPP PARALLAX - TU EFECTO COMPLETO
 ============================================ */
 .wa-dynamic-section {
     margin: 60px 0;
@@ -1339,7 +1460,7 @@ body {
 }
 
 /* ============================================
-   TESTIMONIOS
+   TESTIMONIOS - TUS ÍCONOS DE FONTAWESOME
 ============================================ */
 .testimonials-section {
     max-width: 1400px;
@@ -1389,12 +1510,20 @@ body {
     gap: 12px;
 }
 
-.testimonial-author img {
-    width: 45px;
-    height: 45px;
+.testimonial-icon {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--primary);
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.testimonial-icon i {
+    font-size: 24px;
+    color: white;
 }
 
 .testimonial-author h4 {
@@ -1852,15 +1981,693 @@ body {
 }
 
 /* ============================================
-   RESPONSIVE
+   ESTILOS NARANJA PARA CARRUSEL - TUS ESTILOS (OPTIMIZADO MÓVIL)
 ============================================ */
-@media (max-width: 1024px) {
+.swiper-button-prev,
+.swiper-button-next {
+    color: white !important;
+    background: var(--gradient) !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    box-shadow: 0 3px 10px rgba(255, 107, 0, 0.4) !important;
+    transition: all 0.3s ease !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    backdrop-filter: blur(3px) !important;
+}
+
+/* Flechas en los extremos */
+.swiper-button-prev {
+    left: 20px !important;
+}
+
+.swiper-button-next {
+    right: 20px !important;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 5px 15px rgba(255, 107, 0, 0.6) !important;
+}
+
+.swiper-button-prev:active,
+.swiper-button-next:active {
+    transform: scale(0.9) !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 16px !important;
+    font-weight: bold !important;
+}
+
+/* Paginación centrada */
+.swiper-pagination {
+    bottom: 15px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    text-align: center !important;
+}
+
+.swiper-pagination-bullet {
+    background: white !important;
+    opacity: 0.5 !important;
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 10px !important;
+    transition: all 0.2s ease !important;
+    margin: 0 4px !important;
+    border: 1px solid rgba(255, 107, 0, 0.3) !important;
+    display: inline-block !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--gradient) !important;
+    opacity: 1 !important;
+    width: 18px !important;
+    box-shadow: 0 0 8px rgba(255, 107, 0, 0.6) !important;
+    border-color: transparent !important;
+}
+
+/* ============================================
+   CONTENIDO DEL HERO - CENTRADO PERO CON ESPACIO
+============================================ */
+.hero-content {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 80px;
+    color: white;
+    max-width: 700px;
+    margin: 0 auto;
+    /* Centrado horizontal */
+    text-align: left;
+    /* Texto alineado a la izquierda */
+}
+
+/* Para móvil, centrar el texto pero mantener padding */
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 0 40px;
+        margin: 0;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content {
+        padding: 0 25px;
+    }
+}
+
+/* ============================================
+   AJUSTES PARA MÓVIL EN EL BANNER
+============================================ */
+@media (max-width: 768px) {
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        font-size: 14px !important;
+    }
+
+    .swiper-button-prev {
+        left: 10px !important;
+    }
+
+    .swiper-button-next {
+        right: 10px !important;
+    }
+
+    .swiper-pagination-bullet {
+        width: 5px !important;
+        height: 5px !important;
+        margin: 0 3px !important;
+    }
+
+    .swiper-pagination-bullet-active {
+        width: 14px !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        font-size: 12px !important;
+    }
+
+    .swiper-button-prev {
+        left: 8px !important;
+    }
+
+    .swiper-button-next {
+        right: 8px !important;
+    }
+
+    .swiper-pagination-bullet {
+        width: 4px !important;
+        height: 4px !important;
+        margin: 0 2px !important;
+    }
+
+    .swiper-pagination-bullet-active {
+        width: 12px !important;
+    }
+}
+
+@media (max-width: 360px) {
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 24px !important;
+        height: 24px !important;
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        font-size: 10px !important;
+    }
+
+    .swiper-button-prev {
+        left: 5px !important;
+    }
+
+    .swiper-button-next {
+        right: 5px !important;
+    }
+
+    .swiper-pagination {
+        bottom: 8px !important;
+    }
+
+    .swiper-pagination-bullet {
+        width: 3px !important;
+        height: 3px !important;
+    }
+
+    .swiper-pagination-bullet-active {
+        width: 10px !important;
+    }
+}
+
+/* ============================================
+   HEADER PRINCIPAL - SUPER OPTIMIZADO MÓVIL
+   (INSERTAR ANTES DE LOS MEDIA QUERIES)
+============================================ */
+
+/* Ajustes para pantallas muy pequeñas (menos de 380px) */
+@media (max-width: 380px) {
+    .header-container {
+        padding: 6px 8px;
+        gap: 4px;
+    }
+
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+
+    .logo-text h1 {
+        font-size: 14px;
+    }
+
+    .search-box input {
+        padding: 6px 8px 6px 28px;
+        font-size: 11px;
+        height: 32px;
+    }
+
+    .search-box i {
+        font-size: 10px;
+        left: 8px;
+    }
+
+    .cart-button {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .cart-count {
+        width: 16px;
+        height: 16px;
+        font-size: 8px;
+        top: -4px;
+        right: -4px;
+    }
+
+    /* Filtros más compactos */
+    .filters-section {
+        top: 48px;
+        padding: 4px 0;
+    }
+
+    .category-btn {
+        padding: 4px 10px;
+        font-size: 10px;
+        min-height: 30px;
+    }
+
+    .category-btn i {
+        font-size: 10px;
+    }
+
+    .sort-wrapper {
+        width: 100px;
+    }
+
+    .sort-select {
+        padding: 4px 8px;
+        font-size: 10px;
+        min-height: 30px;
+        background-position: right 6px center;
+    }
+}
+
+/* Ajustes para pantallas pequeñas (380px - 480px) */
+@media (min-width: 381px) and (max-width: 480px) {
+    .header-container {
+        padding: 8px 10px;
+    }
+
+    .logo-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+
+    .logo-text h1 {
+        font-size: 16px;
+    }
+
+    .search-box input {
+        padding: 7px 10px 7px 32px;
+        font-size: 12px;
+        height: 34px;
+    }
+
+    .cart-button {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+    }
+}
+
+/* ============================================
+   HERO BANNER - OPTIMIZADO PARA TODOS LOS TAMAÑOS DE CELULAR
+============================================ */
+
+/* Pantallas muy pequeñas (menos de 360px) */
+@media (max-width: 360px) {
+    .hero-banner {
+        margin: 5px auto 10px;
+        padding: 0 8px;
+    }
+
+    .hero-swiper {
+        border-radius: 12px;
+    }
+
     .hero-swiper .swiper-slide {
-        height: 450px;
+        height: 240px;
+    }
+
+    .hero-content {
+        padding: 0 12px;
+    }
+
+    .hero-tag {
+        padding: 3px 8px;
+        font-size: 8px;
+        margin-bottom: 6px;
+        letter-spacing: 0.5px;
     }
 
     .hero-content h2 {
-        font-size: 40px;
+        font-size: 16px;
+        margin-bottom: 4px;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 9px;
+        margin-bottom: 8px;
+        line-height: 1.3;
+        max-width: 90%;
+    }
+
+    .hero-buttons {
+        gap: 5px;
+    }
+
+    .hero-btn {
+        padding: 5px 10px;
+        font-size: 9px;
+        min-height: 26px;
+        border-width: 1px;
+    }
+
+    .hero-btn.primary {
+        box-shadow: 0 3px 8px rgba(255, 107, 0, 0.4);
+    }
+
+    /* Ajustar flechas del swiper */
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 24px !important;
+        height: 24px !important;
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        font-size: 10px !important;
+    }
+
+    .swiper-pagination-bullet {
+        width: 4px !important;
+        height: 4px !important;
+        margin: 0 3px !important;
+    }
+
+    .swiper-pagination-bullet-active {
+        width: 12px !important;
+    }
+}
+
+/* Pantallas pequeñas (360px - 480px) */
+@media (min-width: 361px) and (max-width: 480px) {
+    .hero-banner {
+        margin: 8px auto 12px;
+        padding: 0 10px;
+    }
+
+    .hero-swiper {
+        border-radius: 14px;
+    }
+
+    .hero-swiper .swiper-slide {
+        height: 280px;
+    }
+
+    .hero-content {
+        padding: 0 15px;
+    }
+
+    .hero-tag {
+        padding: 4px 10px;
+        font-size: 9px;
+        margin-bottom: 8px;
+    }
+
+    .hero-content h2 {
+        font-size: 20px;
+        margin-bottom: 6px;
+    }
+
+    .hero-content p {
+        font-size: 10px;
+        margin-bottom: 10px;
+        line-height: 1.3;
+    }
+
+    .hero-buttons {
+        gap: 8px;
+    }
+
+    .hero-btn {
+        padding: 6px 12px;
+        font-size: 10px;
+        min-height: 30px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        font-size: 12px !important;
+    }
+}
+
+/* Pantallas medianas (481px - 640px) */
+@media (min-width: 481px) and (max-width: 640px) {
+    .hero-swiper .swiper-slide {
+        height: 320px;
+    }
+
+    .hero-content {
+        padding: 0 20px;
+    }
+
+    .hero-tag {
+        padding: 5px 12px;
+        font-size: 10px;
+    }
+
+    .hero-content h2 {
+        font-size: 24px;
+    }
+
+    .hero-content p {
+        font-size: 12px;
+    }
+
+    .hero-btn {
+        padding: 8px 16px;
+        font-size: 11px;
+        min-height: 32px;
+    }
+}
+
+/* Pantallas grandes (641px - 768px) */
+@media (min-width: 641px) and (max-width: 768px) {
+    .hero-swiper .swiper-slide {
+        height: 360px;
+    }
+
+    .hero-content h2 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 13px;
+    }
+}
+
+/* Tablets (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-swiper .swiper-slide {
+        height: 420px;
+    }
+
+    .hero-content h2 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+}
+
+/* ============================================
+   OPTIMIZACIONES ADICIONALES PARA MÓVIL
+============================================ */
+
+/* Mejorar áreas táctiles en móvil */
+@media (max-width: 768px) {
+
+    /* Aumentar área táctil de botones */
+    .category-btn,
+    .sort-select,
+    .hero-btn,
+    .btn-add,
+    .btn-whatsapp,
+    .btn-quick-buy,
+    .view-all,
+    .cart-button {
+        cursor: pointer;
+        -webkit-tap-highlight-color: rgba(255, 107, 0, 0.3);
+    }
+
+    /* Eliminar efectos hover que pueden causar estados atascados */
+    .category-btn:hover,
+    .hero-btn:hover,
+    .btn-add:hover,
+    .btn-whatsapp:hover,
+    .btn-quick-buy:hover {
+        transform: none;
+    }
+
+    /* Mantener solo efectos active para feedback táctil */
+    .category-btn:active,
+    .hero-btn:active,
+    .btn-add:active,
+    .btn-whatsapp:active,
+    .btn-quick-buy:active {
+        transform: scale(0.96);
+        transition: transform 0.1s;
+    }
+
+    /* Ajustar el header cuando se hace scroll */
+    .main-header {
+        transition: all 0.3s ease;
+    }
+
+    /* Reducir blur en móvil para mejor rendimiento */
+    .main-header,
+    .filters-section,
+    .product-card,
+    .testimonial-card,
+    .wa-content {
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+}
+
+/* ============================================
+   OPTIMIZACIONES DE RENDIMIENTO PARA MÓVIL
+============================================ */
+
+/* Reducir animaciones complejas en móvil para mejor rendimiento */
+@media (max-width: 768px) {
+
+    /* Ralentizar o reducir animaciones si es necesario */
+    .gradient-bg {
+        animation-duration: 60s;
+        /* Más lenta para ahorrar batería */
+    }
+
+    .noise {
+        animation: none;
+        /* Desactivar ruido en móvil para mejor rendimiento */
+        opacity: 0.2;
+    }
+
+    .particle {
+        display: none;
+        /* Ocultar partículas en móvil */
+    }
+
+    /* Optimizar transiciones */
+    .product-card,
+    .category-card,
+    .testimonial-card {
+        transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    /* Reducir sombras complejas */
+    .product-card,
+    .category-card,
+    .hero-swiper {
+        box-shadow: 0 10px 20px -8px rgba(255, 107, 0, 0.3);
+    }
+}
+
+/* ============================================
+   AJUSTES PARA PANTALLAS CON NOTCH (iPhone X y similares)
+============================================ */
+@supports (padding: max(0px)) {
+    @media (max-width: 768px) {
+        .main-header {
+            padding-top: env(safe-area-inset-top);
+            padding-left: env(safe-area-inset-left);
+            padding-right: env(safe-area-inset-right);
+        }
+
+        .header-container {
+            padding-top: max(8px, env(safe-area-inset-top));
+        }
+
+        .whatsapp-float {
+            bottom: max(20px, env(safe-area-inset-bottom));
+            right: max(20px, env(safe-area-inset-right));
+        }
+
+        .scroll-top {
+            bottom: max(20px, env(safe-area-inset-bottom));
+            left: max(20px, env(safe-area-inset-left));
+        }
+    }
+}
+
+/* ============================================
+   MODO RETRATO VS PAISAJE EN MÓVIL
+============================================ */
+@media (max-width: 768px) and (orientation: landscape) {
+
+    /* Ajustes para cuando el celular está en horizontal */
+    .hero-swiper .swiper-slide {
+        height: 200px;
+    }
+
+    .hero-content {
+        padding: 0 30px;
+    }
+
+    .hero-content h2 {
+        font-size: 22px;
+        margin-bottom: 4px;
+    }
+
+    .hero-content p {
+        font-size: 11px;
+        margin-bottom: 8px;
+    }
+
+    .hero-tag {
+        padding: 3px 10px;
+        font-size: 9px;
+        margin-bottom: 5px;
+    }
+
+    .hero-buttons {
+        gap: 8px;
+    }
+
+    .hero-btn {
+        padding: 5px 15px;
+        font-size: 10px;
+        min-height: 28px;
+    }
+
+    /* Ocultar algunos elementos en landscape para no saturar */
+    .particles {
+        display: none;
+    }
+}
+/* ============================================
+   MEDIA QUERIES - OPTIMIZACIÓN PARA MÓVIL
+   (TUS EFECTOS SE CONSERVAN, SOLO SE AJUSTAN TAMAÑOS)
+============================================ */
+@media (max-width: 1024px) {
+    .hero-swiper .swiper-slide {
+        height: 500px;
+    }
+
+    .hero-content h2 {
+        font-size: 48px;
     }
 
     .recently-grid {
@@ -1874,7 +2681,7 @@ body {
 
 @media (max-width: 768px) {
 
-    /* Header */
+    /* Header optimizado */
     .header-container {
         padding: 10px 15px;
         flex-wrap: wrap;
@@ -1895,7 +2702,7 @@ body {
         width: 100%;
     }
 
-    /* Filtros */
+    /* Filtros - TU ANIMACIÓN SE MANTIENE */
     .filters-wrapper {
         padding: 0 15px;
         flex-direction: column;
@@ -1912,9 +2719,10 @@ body {
 
     .categories-scroll {
         animation: scrollCategorias 25s linear infinite;
+        /* Más rápido en móvil */
     }
 
-    /* Hero */
+    /* Hero - TUS EFECTOS SE REDIMENSIONAN */
     .hero-swiper .swiper-slide {
         height: 400px;
     }
@@ -1931,7 +2739,29 @@ body {
         font-size: 14px;
     }
 
-    /* Productos */
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Swiper flechas más pequeñas pero funcionales */
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        font-size: 18px !important;
+    }
+
+    /* Grid de productos - 2 columnas en móvil */
     .products-section {
         padding: 15px;
     }
@@ -1962,7 +2792,7 @@ body {
         font-size: 11px;
     }
 
-    /* Botones en móvil - solo iconos */
+    /* Botones en móvil - solo iconos para más espacio */
     .btn-add,
     .btn-whatsapp,
     .btn-quick-buy {
@@ -1977,9 +2807,13 @@ body {
         margin: 0 !important;
     }
 
-    /* WhatsApp section */
+    /* WhatsApp section - TUS EFECTOS SE MANTIENEN */
     .wa-dynamic-section {
         height: 350px;
+    }
+
+    .wa-content {
+        padding: 30px 20px;
     }
 
     .wa-content h2 {
@@ -1995,7 +2829,7 @@ body {
         padding: 12px 30px;
     }
 
-    /* Testimonios */
+    /* Testimonios - 1 columna en móvil */
     .testimonials-grid {
         grid-template-columns: 1fr;
         gap: 15px;
@@ -2005,10 +2839,11 @@ body {
         padding: 0 15px;
     }
 
-    /* Footer */
+    /* Footer optimizado */
     .footer-container {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 25px;
     }
 
     .footer-section h4::after {
@@ -2028,6 +2863,11 @@ body {
 
     .hero-content h2 {
         font-size: 24px;
+    }
+
+    .hero-tag {
+        font-size: 11px;
+        padding: 8px 15px;
     }
 
     .product-image {
@@ -2050,87 +2890,25 @@ body {
 }
 
 /* ============================================
-   ESTILOS NARANJA PARA CARRUSEL (VERSIÓN MEJORADA)
+   ESTILOS ADICIONALES PARA SWEET ALERT
 ============================================ */
-
-/* Flechas de navegación */
-.swiper-button-prev,
-.swiper-button-next {
-    color: white !important;
-    background: var(--gradient) !important;
-    width: 55px !important;
-    height: 55px !important;
-    border-radius: 50% !important;
-    box-shadow: 0 5px 20px rgba(255, 107, 0, 0.6) !important;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-    border: 2px solid rgba(255, 255, 255, 0.3) !important;
-    backdrop-filter: blur(5px) !important;
+.swal-image-zoom {
+    border-radius: 20px;
+    max-height: 70vh !important;
+    object-fit: contain;
 }
 
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-    transform: scale(1.15) !important;
-    box-shadow: 0 10px 30px rgba(255, 107, 0, 0.8) !important;
-    border-color: white !important;
+/* ============================================
+   UTILIDADES
+============================================ */
+.hidden {
+    display: none !important;
 }
 
-.swiper-button-prev:active,
-.swiper-button-next:active {
-    transform: scale(0.95) !important;
+.text-primary {
+    color: var(--primary);
 }
 
-.swiper-button-prev::after,
-.swiper-button-next::after {
-    font-size: 22px !important;
-    font-weight: bold !important;
+.bg-gradient {
+    background: var(--gradient);
 }
-
-/* Posición de las flechas (opcional - ajústalas si es necesario) */
-.swiper-button-prev {
-    left: 20px !important;
-}
-
-.swiper-button-next {
-    right: 20px !important;
-}
-
-/* Paginación (puntos) */
-.swiper-pagination {
-    bottom: 25px !important;
-}
-
-.swiper-pagination-bullet {
-    background: white !important;
-    opacity: 0.6 !important;
-    width: 12px !important;
-    height: 12px !important;
-    border-radius: 20px !important;
-    transition: all 0.3s ease !important;
-    margin: 0 5px !important;
-    border: 2px solid rgba(255, 107, 0, 0.3) !important;
-}
-
-.swiper-pagination-bullet-active {
-    background: var(--gradient) !important;
-    opacity: 1 !important;
-    width: 30px !important;
-    box-shadow: 0 0 20px rgba(255, 107, 0, 0.8) !important;
-    border-color: transparent !important;
-}
-
-.swiper-pagination-bullet:hover {
-    background: var(--primary) !important;
-    opacity: 0.9 !important;
-    transform: scale(1.1) !important;
-}
-
-/* Para los bullets dinámicos */
-.swiper-pagination-bullet-active-next,
-.swiper-pagination-bullet-active-prev {
-    background: rgba(255, 107, 0, 0.4) !important;
-}
-
-.swiper-pagination-bullet-active-main {
-    background: var(--gradient) !important;
-}
-
